@@ -1,8 +1,11 @@
+import 'analysis_repository.dart';
 import 'analysis_result.dart';
 import 'speed_time.dart';
 
 class AnalysisService {
-  const AnalysisService();
+  const AnalysisService(this._analysisRepository);
+
+  final AnalysisRepository _analysisRepository;
 
   AnalysisResult getAverageSpeedForPeriod(
     List<SpeedTime> data,
@@ -65,5 +68,9 @@ class AnalysisService {
       timePeriod: timePeriod,
       averageSpeed: averageSpeed,
     );
+  }
+
+  Future<String> saveResult(AnalysisResult result) {
+    return _analysisRepository.saveToFile(result);
   }
 }
