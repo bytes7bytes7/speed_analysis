@@ -1,9 +1,6 @@
 import 'package:collection/collection.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:speed_analysis/domain/analysis_repository.dart';
-import 'package:speed_analysis/domain/analysis_service.dart';
-import 'package:speed_analysis/domain/speed_time.dart';
-import 'package:speed_analysis/domain/speed_time_repository.dart';
+import 'package:speed_analysis/features/features.dart';
 import 'package:test/test.dart';
 
 const _decimalAmount = 12;
@@ -241,6 +238,24 @@ void main() {
       final result = sut.getAverageSpeedForPeriod(data, timePeriod);
 
       expect(result.averageSpeed[1], 80 / 3);
+    });
+
+    test(
+        'data with >2 items (time gaps lass than'
+        ' time period, >1 periods, total time % timePeriod != 0)'
+        ' some periods belong to 2 time periods,'
+        ' last period is in result', () {
+      final data = [
+        const SpeedTime(speed: 10, time: 1, x: 1, y: 1),
+        const SpeedTime(speed: 20, time: 1.5, x: 1, y: 1),
+        const SpeedTime(speed: 30, time: 3, x: 1, y: 1),
+        const SpeedTime(speed: 20, time: 3.2, x: 1, y: 1),
+      ];
+      const timePeriod = 1.5;
+
+      final result = sut.getAverageSpeedForPeriod(data, timePeriod);
+
+      expect(result.averageSpeed.length, 2);
     });
   });
 }

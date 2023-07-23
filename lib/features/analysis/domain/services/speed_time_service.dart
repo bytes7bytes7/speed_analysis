@@ -1,5 +1,5 @@
-import 'speed_time.dart';
-import 'speed_time_repository.dart';
+import '../repositories/speed_time_repository.dart';
+import '../value_objects/speed_time/speed_time.dart';
 
 class SpeedTimeService {
   const SpeedTimeService(this._speedTimeRepository);

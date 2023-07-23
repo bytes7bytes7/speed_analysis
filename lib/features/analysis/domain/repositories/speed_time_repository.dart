@@ -1,4 +1,4 @@
-import 'speed_time.dart';
+import '../value_objects/speed_time/speed_time.dart';
 
 abstract class SpeedTimeRepository {
   const SpeedTimeRepository();

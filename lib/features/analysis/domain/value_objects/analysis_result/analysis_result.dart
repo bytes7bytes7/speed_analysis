@@ -1,11 +1,15 @@
-class AnalysisResult {
-  const AnalysisResult({
-    required this.timePeriod,
-    required this.averageSpeed,
-  });
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  final double timePeriod;
-  final List<double> averageSpeed;
+part 'analysis_result.freezed.dart';
+
+@freezed
+class AnalysisResult with _$AnalysisResult {
+  const factory AnalysisResult({
+    required double timePeriod,
+    required List<double> averageSpeed,
+  }) = _AnalysisResult;
+
+  const AnalysisResult._();
 
   double get totalTime {
     return timePeriod * averageSpeed.length;

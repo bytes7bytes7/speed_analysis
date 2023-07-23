@@ -1,6 +1,6 @@
-import 'analysis_repository.dart';
-import 'analysis_result.dart';
-import 'speed_time.dart';
+import '../repositories/analysis_repository.dart';
+import '../value_objects/analysis_result/analysis_result.dart';
+import '../value_objects/speed_time/speed_time.dart';
 
 class AnalysisService {
   const AnalysisService(this._analysisRepository);
