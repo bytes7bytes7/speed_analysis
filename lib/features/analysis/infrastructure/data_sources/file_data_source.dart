@@ -33,4 +33,19 @@ class FileDataSource {
 
     return csv.map(SpeedTimeDTO.fromList).toList();
   }
+
+  Future<String?> saveFile(List<int> bytes, String fileName) async {
+    final path = await FilePicker.platform.saveFile(
+      dialogTitle: 'Choose location',
+      fileName: fileName,
+    );
+
+    if (path == null) {
+      return null;
+    }
+
+    File(path).writeAsBytesSync(bytes);
+
+    return path;
+  }
 }

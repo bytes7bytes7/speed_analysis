@@ -37,8 +37,8 @@ import '../../../features/analysis/infrastructure/repositories/speed_time_reposi
     as _i12;
 import '../../../utils/mapper.dart' as _i7;
 
-const String _prod = 'prod';
 const String _dev = 'dev';
+const String _prod = 'prod';
 
 // ignore_for_file: unnecessary_lambdas
 // ignore_for_file: lines_longer_than_80_chars
@@ -55,10 +55,7 @@ _i1.GetIt init(
   );
   gh.lazySingleton<_i3.AnalysisRepository>(
     () => _i4.DevAnalysisRepository(),
-    registerFor: {
-      _prod,
-      _dev,
-    },
+    registerFor: {_dev},
   );
   gh.lazySingleton<_i5.AnalysisService>(
       () => _i5.AnalysisService(gh<_i3.AnalysisRepository>()));
@@ -82,5 +79,9 @@ _i1.GetIt init(
         gh<_i15.SpeedTimeService>(),
         gh<_i15.AnalysisService>(),
       ));
+  gh.lazySingleton<_i3.AnalysisRepository>(
+    () => _i4.ProdAnalysisRepository(gh<_i6.FileDataSource>()),
+    registerFor: {_prod},
+  );
   return getIt;
 }

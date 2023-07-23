@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:injectable/injectable.dart';
 
 import '../repositories/analysis_repository.dart';
@@ -74,7 +76,7 @@ class AnalysisService {
     );
   }
 
-  Future<String> saveResult(AnalysisResult result) {
-    return _analysisRepository.saveToFile(result);
+  Future<String?> saveResult(List<Uint8List> bytes, String fileName) {
+    return _analysisRepository.saveToFile(bytes, fileName);
   }
 }

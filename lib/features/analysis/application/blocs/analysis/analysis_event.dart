@@ -9,9 +9,10 @@ class AnalysisEvent with _$AnalysisEvent {
   const factory AnalysisEvent.setTimePeriod({required int period}) =
       _SetTimePeriodEvent;
 
-  const factory AnalysisEvent.switchShowPercent() = _SwitchShowPercentEvent;
-
   const factory AnalysisEvent.clear() = _ClearEvent;
 
-  const factory AnalysisEvent.export() = _ExportEvent;
+  const factory AnalysisEvent.export({
+    required Uint8List speedChatImage,
+    required Uint8List percentCharImage,
+  }) = _ExportEvent;
 }

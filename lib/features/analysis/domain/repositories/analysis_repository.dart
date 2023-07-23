@@ -1,7 +1,7 @@
-import '../value_objects/analysis_result/analysis_result.dart';
+import 'dart:typed_data';
 
 abstract class AnalysisRepository {
   const AnalysisRepository();
 
-  Future<String> saveToFile(AnalysisResult result);
+  Future<String?> saveToFile(List<Uint8List> images, String fileName);
 }

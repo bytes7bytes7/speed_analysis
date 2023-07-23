@@ -1,3 +1,6 @@
+import 'dart:typed_data';
+import 'dart:ui' as ui;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
@@ -5,6 +8,9 @@ import 'package:syncfusion_flutter_charts/charts.dart';
 
 import '../../application/application.dart';
 import '../widgets/widgets.dart';
+
+final _speedChartKey = GlobalKey<SfCartesianChartState>();
+final _percentChartKey = GlobalKey<SfCartesianChartState>();
 
 class AnalysisScreen extends StatelessWidget {
   const AnalysisScreen({super.key});
@@ -91,14 +97,19 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
           actions: [
             if (state.hasResult)
               IconButton(
-                icon: Icon(state.showPercent ? Icons.speed : Icons.percent),
-                onPressed: () =>
-                    bloc.add(const AnalysisEvent.switchShowPercent()),
-              ),
-            if (state.hasResult)
-              IconButton(
                 icon: const Icon(Icons.picture_as_pdf_outlined),
-                onPressed: () => bloc.add(const AnalysisEvent.export()),
+                onPressed: () async {
+                  try {
+                    bloc.add(
+                      AnalysisEvent.export(
+                        speedChatImage: await _chartToImage(_speedChartKey),
+                        percentCharImage: await _chartToImage(_percentChartKey),
+                      ),
+                    );
+                  } catch (e) {
+                    // ignore
+                  }
+                },
               ),
           ],
           bottom: bottom,
@@ -171,65 +182,74 @@ class _DataBody extends StatelessWidget {
           return const SizedBox.shrink();
         }
 
-        if (state.showPercent) {
-          return Center(
-            child: SfCartesianChart(
-              primaryXAxis: CategoryAxis(
-                title: AxisTitle(
-                  text: 'Speed (m/s)',
-                  alignment: ChartAlignment.far,
-                ),
-              ),
-              primaryYAxis: NumericAxis(
-                title: AxisTitle(
-                  text: 'Percent (%)',
-                  alignment: ChartAlignment.far,
-                ),
-              ),
-              series: [
-                ColumnSeries(
-                  dataSource: [
-                    ...result.percentOfAverageSpeed.entries,
-                  ],
-                  xValueMapper: (e, i) => e.key.toStringAsFixed(1),
-                  yValueMapper: (e, i) => e.value,
-                ),
-              ],
-            ),
-          );
-        }
-
         var averageSpeed = <double>[];
         if (result.averageSpeed.isNotEmpty) {
           // just because library draws each bar for each value, not for value range
           averageSpeed = [...result.averageSpeed, result.averageSpeed.last];
         }
 
-        return Center(
-          child: SfCartesianChart(
-            primaryXAxis: NumericAxis(
-              interval: period.toDouble(),
-              title: AxisTitle(
-                text: 'Time (min)',
-                alignment: ChartAlignment.far,
+        return Row(
+          children: [
+            Expanded(
+              child: SfCartesianChart(
+                key: _speedChartKey,
+                primaryXAxis: NumericAxis(
+                  interval: period.toDouble(),
+                  title: AxisTitle(
+                    text: 'Time (min)',
+                    alignment: ChartAlignment.far,
+                  ),
+                ),
+                primaryYAxis: NumericAxis(
+                  title: AxisTitle(
+                    text: 'Speed (m/s)',
+                    alignment: ChartAlignment.far,
+                  ),
+                ),
+                series: [
+                  StepAreaSeries(
+                    dataSource: averageSpeed,
+                    xValueMapper: (e, i) => i * period,
+                    yValueMapper: (e, i) => e,
+                  ),
+                ],
               ),
             ),
-            primaryYAxis: NumericAxis(
-              title: AxisTitle(
-                text: 'Speed (m/s)',
-                alignment: ChartAlignment.far,
+            Expanded(
+              child: SfCartesianChart(
+                key: _percentChartKey,
+                primaryXAxis: CategoryAxis(
+                  title: AxisTitle(
+                    text: 'Speed (m/s)',
+                    alignment: ChartAlignment.far,
+                  ),
+                ),
+                primaryYAxis: NumericAxis(
+                  title: AxisTitle(
+                    text: 'Percent (%)',
+                    alignment: ChartAlignment.far,
+                  ),
+                ),
+                series: [
+                  ColumnSeries(
+                    dataSource: [
+                      ...result.percentOfAverageSpeed.entries,
+                    ],
+                    xValueMapper: (e, i) => e.key.toStringAsFixed(1),
+                    yValueMapper: (e, i) => e.value,
+                  ),
+                ],
               ),
             ),
-            series: [
-              StepAreaSeries(
-                dataSource: averageSpeed,
-                xValueMapper: (e, i) => i * period,
-                yValueMapper: (e, i) => e,
-              ),
-            ],
-          ),
+          ],
         );
       },
     );
   }
+}
+
+Future<Uint8List> _chartToImage(GlobalKey<SfCartesianChartState> key) async {
+  final data = await key.currentState!.toImage(pixelRatio: 3.0);
+  final bytes = await data.toByteData(format: ui.ImageByteFormat.png);
+  return bytes!.buffer.asUint8List(bytes.offsetInBytes, bytes.lengthInBytes);
 }

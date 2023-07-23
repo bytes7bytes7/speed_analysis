@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -14,6 +16,7 @@ const _timePeriodsInMin = [
   5,
   10,
 ];
+const _pdfFileName = 'speed_test_result.pdf';
 
 @injectable
 class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
@@ -24,7 +27,6 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
     on<_PickFileEvent>(_pickFile);
     on<_DoAnalysisEvent>(_doAnalysis);
     on<_SetTimePeriodEvent>(_setTimePeriod);
-    on<_SwitchShowPercentEvent>(_switchShowPercent);
     on<_ClearEvent>(_clear);
     on<_ExportEvent>(_export);
   }
@@ -56,7 +58,7 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
 
       add(const AnalysisEvent.doAnalysis());
     } catch (e) {
-      emit(state.copyWith(info: 'Error'));
+      emit(state.copyWith(info: 'An error occurs during reading file'));
       emit(state.copyWith(info: ''));
     } finally {
       emit(state.copyWith(isLoading: false));
@@ -93,13 +95,6 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
     add(const AnalysisEvent.doAnalysis());
   }
 
-  void _switchShowPercent(
-    _SwitchShowPercentEvent event,
-    Emitter<AnalysisState> emit,
-  ) {
-    emit(state.copyWith(showPercent: !state.showPercent));
-  }
-
   void _clear(
     _ClearEvent event,
     Emitter<AnalysisState> emit,
@@ -111,18 +106,18 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
     _ExportEvent event,
     Emitter<AnalysisState> emit,
   ) async {
-    final result = state.result;
-    if (result == null) {
-      return;
-    }
-
     emit(state.copyWith(isLoading: true));
 
     try {
-      final fileName = await _analysisService.saveResult(result);
+      final fileName = await _analysisService.saveResult(
+        [event.speedChatImage, event.percentCharImage],
+        _pdfFileName,
+      );
 
-      emit(state.copyWith(info: 'Exported to file: $fileName'));
-      emit(state.copyWith(info: ''));
+      if (fileName != null) {
+        emit(state.copyWith(info: 'Exported to file: $fileName'));
+        emit(state.copyWith(info: ''));
+      }
     } catch (e) {
       emit(state.copyWith(info: 'An error occurs during exporting'));
       emit(state.copyWith(info: ''));
