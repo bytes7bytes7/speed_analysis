@@ -5,7 +5,7 @@ class AnalysisState with _$AnalysisState {
   const factory AnalysisState({
     @Default(false) bool isLoading,
     @Default('') String error,
-    AnalysisResultVM? result,
+    AnalysisResult? result,
     String? timePeriod,
     @Default([]) List<String> timePeriods,
   }) = _AnalysisState;

@@ -168,7 +168,7 @@ abstract class _PickFileEvent implements AnalysisEvent {
 mixin _$AnalysisState {
   bool get isLoading => throw _privateConstructorUsedError;
   String get error => throw _privateConstructorUsedError;
-  AnalysisResultVM? get result => throw _privateConstructorUsedError;
+  AnalysisResult? get result => throw _privateConstructorUsedError;
   String? get timePeriod => throw _privateConstructorUsedError;
   List<String> get timePeriods => throw _privateConstructorUsedError;
 
@@ -186,11 +186,11 @@ abstract class $AnalysisStateCopyWith<$Res> {
   $Res call(
       {bool isLoading,
       String error,
-      AnalysisResultVM? result,
+      AnalysisResult? result,
       String? timePeriod,
       List<String> timePeriods});
 
-  $AnalysisResultVMCopyWith<$Res>? get result;
+  $AnalysisResultCopyWith<$Res>? get result;
 }
 
 /// @nodoc
@@ -224,7 +224,7 @@ class _$AnalysisStateCopyWithImpl<$Res, $Val extends AnalysisState>
       result: freezed == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as AnalysisResultVM?,
+              as AnalysisResult?,
       timePeriod: freezed == timePeriod
           ? _value.timePeriod
           : timePeriod // ignore: cast_nullable_to_non_nullable
@@ -238,12 +238,12 @@ class _$AnalysisStateCopyWithImpl<$Res, $Val extends AnalysisState>
 
   @override
   @pragma('vm:prefer-inline')
-  $AnalysisResultVMCopyWith<$Res>? get result {
+  $AnalysisResultCopyWith<$Res>? get result {
     if (_value.result == null) {
       return null;
     }
 
-    return $AnalysisResultVMCopyWith<$Res>(_value.result!, (value) {
+    return $AnalysisResultCopyWith<$Res>(_value.result!, (value) {
       return _then(_value.copyWith(result: value) as $Val);
     });
   }
@@ -260,12 +260,12 @@ abstract class _$$_AnalysisStateCopyWith<$Res>
   $Res call(
       {bool isLoading,
       String error,
-      AnalysisResultVM? result,
+      AnalysisResult? result,
       String? timePeriod,
       List<String> timePeriods});
 
   @override
-  $AnalysisResultVMCopyWith<$Res>? get result;
+  $AnalysisResultCopyWith<$Res>? get result;
 }
 
 /// @nodoc
@@ -297,7 +297,7 @@ class __$$_AnalysisStateCopyWithImpl<$Res>
       result: freezed == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as AnalysisResultVM?,
+              as AnalysisResult?,
       timePeriod: freezed == timePeriod
           ? _value.timePeriod
           : timePeriod // ignore: cast_nullable_to_non_nullable
@@ -329,7 +329,7 @@ class _$_AnalysisState extends _AnalysisState {
   @JsonKey()
   final String error;
   @override
-  final AnalysisResultVM? result;
+  final AnalysisResult? result;
   @override
   final String? timePeriod;
   final List<String> _timePeriods;
@@ -376,7 +376,7 @@ abstract class _AnalysisState extends AnalysisState {
   const factory _AnalysisState(
       {final bool isLoading,
       final String error,
-      final AnalysisResultVM? result,
+      final AnalysisResult? result,
       final String? timePeriod,
       final List<String> timePeriods}) = _$_AnalysisState;
   const _AnalysisState._() : super._();
@@ -386,7 +386,7 @@ abstract class _AnalysisState extends AnalysisState {
   @override
   String get error;
   @override
-  AnalysisResultVM? get result;
+  AnalysisResult? get result;
   @override
   String? get timePeriod;
   @override

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 import '../../application/application.dart';
 import '../widgets/widgets.dart';
@@ -84,8 +85,27 @@ class _DataBody extends StatelessWidget {
           );
         }
 
-        return const Center(
-          child: Text('Data'),
+        final result = state.result;
+        if (result == null) {
+          return const SizedBox.shrink();
+        }
+
+        return Center(
+          child: SfCartesianChart(
+            zoomPanBehavior: ZoomPanBehavior(
+              enablePinching: true,
+            ),
+            primaryXAxis: NumericAxis(
+              interval: result.timePeriod.toDouble(),
+            ),
+            series: [
+              ColumnSeries(
+                dataSource: result.averageSpeed,
+                xValueMapper: (e, i) => i,
+                yValueMapper: (e, i) => e,
+              ),
+            ],
+          ),
         );
       },
     );

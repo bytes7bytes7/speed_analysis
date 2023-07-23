@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$AnalysisResult {
-  double get timePeriod => throw _privateConstructorUsedError;
+  int get timePeriod => throw _privateConstructorUsedError;
   List<double> get averageSpeed => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -30,7 +30,7 @@ abstract class $AnalysisResultCopyWith<$Res> {
           AnalysisResult value, $Res Function(AnalysisResult) then) =
       _$AnalysisResultCopyWithImpl<$Res, AnalysisResult>;
   @useResult
-  $Res call({double timePeriod, List<double> averageSpeed});
+  $Res call({int timePeriod, List<double> averageSpeed});
 }
 
 /// @nodoc
@@ -53,7 +53,7 @@ class _$AnalysisResultCopyWithImpl<$Res, $Val extends AnalysisResult>
       timePeriod: null == timePeriod
           ? _value.timePeriod
           : timePeriod // ignore: cast_nullable_to_non_nullable
-              as double,
+              as int,
       averageSpeed: null == averageSpeed
           ? _value.averageSpeed
           : averageSpeed // ignore: cast_nullable_to_non_nullable
@@ -70,7 +70,7 @@ abstract class _$$_AnalysisResultCopyWith<$Res>
       __$$_AnalysisResultCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({double timePeriod, List<double> averageSpeed});
+  $Res call({int timePeriod, List<double> averageSpeed});
 }
 
 /// @nodoc
@@ -91,7 +91,7 @@ class __$$_AnalysisResultCopyWithImpl<$Res>
       timePeriod: null == timePeriod
           ? _value.timePeriod
           : timePeriod // ignore: cast_nullable_to_non_nullable
-              as double,
+              as int,
       averageSpeed: null == averageSpeed
           ? _value._averageSpeed
           : averageSpeed // ignore: cast_nullable_to_non_nullable
@@ -109,7 +109,7 @@ class _$_AnalysisResult extends _AnalysisResult {
         super._();
 
   @override
-  final double timePeriod;
+  final int timePeriod;
   final List<double> _averageSpeed;
   @override
   List<double> get averageSpeed {
@@ -147,12 +147,12 @@ class _$_AnalysisResult extends _AnalysisResult {
 
 abstract class _AnalysisResult extends AnalysisResult {
   const factory _AnalysisResult(
-      {required final double timePeriod,
+      {required final int timePeriod,
       required final List<double> averageSpeed}) = _$_AnalysisResult;
   const _AnalysisResult._() : super._();
 
   @override
-  double get timePeriod;
+  int get timePeriod;
   @override
   List<double> get averageSpeed;
   @override

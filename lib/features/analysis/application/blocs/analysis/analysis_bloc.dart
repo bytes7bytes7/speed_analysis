@@ -2,9 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../../../utils/mapper.dart';
 import '../../../domain/domain.dart';
-import '../../view_models/view_models.dart';
 
 part 'analysis_event.dart';
 
@@ -23,15 +21,12 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
   AnalysisBloc(
     this._speedTimeService,
     this._analysisService,
-    this._analysisResultToAnalysisResultVMMapper,
   ) : super(const AnalysisState()) {
     on<_PickFileEvent>(_pickFile);
   }
 
   final SpeedTimeService _speedTimeService;
   final AnalysisService _analysisService;
-  final Mapper<AnalysisResult, AnalysisResultVM>
-      _analysisResultToAnalysisResultVMMapper;
 
   Future<void> _pickFile(
     _PickFileEvent event,
@@ -45,14 +40,13 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
         return;
       }
 
-      final timePeriod = _timePeriods.first.toDouble();
+      final timePeriod = _timePeriods.first;
       final result =
           _analysisService.getAverageSpeedForPeriod(dataOrNull, timePeriod);
-      final resultVM = _analysisResultToAnalysisResultVMMapper.map(result);
 
       emit(
         state.copyWith(
-          result: resultVM,
+          result: result,
         ),
       );
     } catch (e) {

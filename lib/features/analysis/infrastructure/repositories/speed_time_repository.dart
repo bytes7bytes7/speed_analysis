@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:injectable/injectable.dart';
 
 import '../../domain/repositories/speed_time_repository.dart';
@@ -10,10 +12,12 @@ class DevSpeedTimeRepository implements SpeedTimeRepository {
 
   @override
   Future<List<SpeedTime>?> fetchDataFromFile() {
+    final rand = Random();
+
     return Future.delayed(const Duration(seconds: 2), () {
-      return List.generate(10, (index) {
+      return List.generate(60 * 60, (index) {
         return SpeedTime(
-          speed: 20 * index.toDouble(),
+          speed: rand.nextInt(100) + rand.nextDouble(),
           time: index.toDouble(),
           x: 1,
           y: 1,

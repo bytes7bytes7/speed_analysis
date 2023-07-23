@@ -12,7 +12,7 @@ class AnalysisService {
 
   AnalysisResult getAverageSpeedForPeriod(
     List<SpeedTime> data,
-    double timePeriod,
+    int timePeriod,
   ) {
     if (data.isEmpty) {
       return AnalysisResult(
