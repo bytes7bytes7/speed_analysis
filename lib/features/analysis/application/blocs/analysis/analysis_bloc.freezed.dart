@@ -170,7 +170,7 @@ mixin _$AnalysisState {
   String get error => throw _privateConstructorUsedError;
   AnalysisResult? get result => throw _privateConstructorUsedError;
   double? get timePeriod => throw _privateConstructorUsedError;
-  List<String> get timePeriods => throw _privateConstructorUsedError;
+  List<int> get timePeriodsInMin => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AnalysisStateCopyWith<AnalysisState> get copyWith =>
@@ -188,7 +188,7 @@ abstract class $AnalysisStateCopyWith<$Res> {
       String error,
       AnalysisResult? result,
       double? timePeriod,
-      List<String> timePeriods});
+      List<int> timePeriodsInMin});
 
   $AnalysisResultCopyWith<$Res>? get result;
 }
@@ -210,7 +210,7 @@ class _$AnalysisStateCopyWithImpl<$Res, $Val extends AnalysisState>
     Object? error = null,
     Object? result = freezed,
     Object? timePeriod = freezed,
-    Object? timePeriods = null,
+    Object? timePeriodsInMin = null,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
@@ -229,10 +229,10 @@ class _$AnalysisStateCopyWithImpl<$Res, $Val extends AnalysisState>
           ? _value.timePeriod
           : timePeriod // ignore: cast_nullable_to_non_nullable
               as double?,
-      timePeriods: null == timePeriods
-          ? _value.timePeriods
-          : timePeriods // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+      timePeriodsInMin: null == timePeriodsInMin
+          ? _value.timePeriodsInMin
+          : timePeriodsInMin // ignore: cast_nullable_to_non_nullable
+              as List<int>,
     ) as $Val);
   }
 
@@ -262,7 +262,7 @@ abstract class _$$_AnalysisStateCopyWith<$Res>
       String error,
       AnalysisResult? result,
       double? timePeriod,
-      List<String> timePeriods});
+      List<int> timePeriodsInMin});
 
   @override
   $AnalysisResultCopyWith<$Res>? get result;
@@ -283,7 +283,7 @@ class __$$_AnalysisStateCopyWithImpl<$Res>
     Object? error = null,
     Object? result = freezed,
     Object? timePeriod = freezed,
-    Object? timePeriods = null,
+    Object? timePeriodsInMin = null,
   }) {
     return _then(_$_AnalysisState(
       isLoading: null == isLoading
@@ -302,10 +302,10 @@ class __$$_AnalysisStateCopyWithImpl<$Res>
           ? _value.timePeriod
           : timePeriod // ignore: cast_nullable_to_non_nullable
               as double?,
-      timePeriods: null == timePeriods
-          ? _value._timePeriods
-          : timePeriods // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+      timePeriodsInMin: null == timePeriodsInMin
+          ? _value._timePeriodsInMin
+          : timePeriodsInMin // ignore: cast_nullable_to_non_nullable
+              as List<int>,
     ));
   }
 }
@@ -318,8 +318,8 @@ class _$_AnalysisState extends _AnalysisState {
       this.error = '',
       this.result,
       this.timePeriod,
-      final List<String> timePeriods = const []})
-      : _timePeriods = timePeriods,
+      final List<int> timePeriodsInMin = const []})
+      : _timePeriodsInMin = timePeriodsInMin,
         super._();
 
   @override
@@ -332,18 +332,19 @@ class _$_AnalysisState extends _AnalysisState {
   final AnalysisResult? result;
   @override
   final double? timePeriod;
-  final List<String> _timePeriods;
+  final List<int> _timePeriodsInMin;
   @override
   @JsonKey()
-  List<String> get timePeriods {
-    if (_timePeriods is EqualUnmodifiableListView) return _timePeriods;
+  List<int> get timePeriodsInMin {
+    if (_timePeriodsInMin is EqualUnmodifiableListView)
+      return _timePeriodsInMin;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_timePeriods);
+    return EqualUnmodifiableListView(_timePeriodsInMin);
   }
 
   @override
   String toString() {
-    return 'AnalysisState(isLoading: $isLoading, error: $error, result: $result, timePeriod: $timePeriod, timePeriods: $timePeriods)';
+    return 'AnalysisState(isLoading: $isLoading, error: $error, result: $result, timePeriod: $timePeriod, timePeriodsInMin: $timePeriodsInMin)';
   }
 
   @override
@@ -358,12 +359,12 @@ class _$_AnalysisState extends _AnalysisState {
             (identical(other.timePeriod, timePeriod) ||
                 other.timePeriod == timePeriod) &&
             const DeepCollectionEquality()
-                .equals(other._timePeriods, _timePeriods));
+                .equals(other._timePeriodsInMin, _timePeriodsInMin));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, isLoading, error, result,
-      timePeriod, const DeepCollectionEquality().hash(_timePeriods));
+      timePeriod, const DeepCollectionEquality().hash(_timePeriodsInMin));
 
   @JsonKey(ignore: true)
   @override
@@ -378,7 +379,7 @@ abstract class _AnalysisState extends AnalysisState {
       final String error,
       final AnalysisResult? result,
       final double? timePeriod,
-      final List<String> timePeriods}) = _$_AnalysisState;
+      final List<int> timePeriodsInMin}) = _$_AnalysisState;
   const _AnalysisState._() : super._();
 
   @override
@@ -390,7 +391,7 @@ abstract class _AnalysisState extends AnalysisState {
   @override
   double? get timePeriod;
   @override
-  List<String> get timePeriods;
+  List<int> get timePeriodsInMin;
   @override
   @JsonKey(ignore: true)
   _$$_AnalysisStateCopyWith<_$_AnalysisState> get copyWith =>

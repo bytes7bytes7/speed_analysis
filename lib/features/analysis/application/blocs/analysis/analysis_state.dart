@@ -7,7 +7,7 @@ class AnalysisState with _$AnalysisState {
     @Default('') String error,
     AnalysisResult? result,
     double? timePeriod,
-    @Default([]) List<String> timePeriods,
+    @Default([]) List<int> timePeriodsInMin,
   }) = _AnalysisState;
 
   const AnalysisState._();

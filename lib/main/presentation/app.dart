@@ -7,10 +7,11 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Speed Analysis',
       debugShowCheckedModeBanner: false,
-      home: AnalysisScreen(),
+      theme: ThemeData.light(useMaterial3: true),
+      home: const AnalysisScreen(),
     );
   }
 }

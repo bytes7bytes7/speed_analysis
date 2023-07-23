@@ -10,9 +10,9 @@ part 'analysis_state.dart';
 
 part 'analysis_bloc.freezed.dart';
 
-const _timePeriods = [
-  5 * 60,
-  5 * 10,
+const _timePeriodsInMin = [
+  5,
+  10,
 ];
 
 @injectable
@@ -39,14 +39,15 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
         return;
       }
 
-      final timePeriod = _timePeriods.first;
+      final timePeriod = _minutesToSeconds(_timePeriodsInMin.first);
       final result =
           _analysisService.getAverageSpeedForPeriod(dataOrNull, timePeriod);
 
       emit(
         state.copyWith(
           result: result,
-          timePeriod: result.timePeriod / 60,
+          timePeriod: _secondsToMinutes(result.timePeriod),
+          timePeriodsInMin: _timePeriodsInMin,
         ),
       );
     } catch (e) {
@@ -56,3 +57,7 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
     }
   }
 }
+
+double _secondsToMinutes(num s) => s / 60;
+
+int _minutesToSeconds(int m) => m * 60;

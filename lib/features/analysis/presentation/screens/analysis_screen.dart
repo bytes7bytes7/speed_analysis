@@ -13,29 +13,79 @@ class AnalysisScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => GetIt.I.get<AnalysisBloc>(),
-      child: const Scaffold(
-        appBar: _AppBar(),
-        body: SafeArea(
-          child: _Body(),
-        ),
-      ),
+      child: const _Scaffold(),
     );
   }
 }
 
-class _AppBar extends StatelessWidget implements PreferredSizeWidget {
-  const _AppBar();
+class _Scaffold extends StatelessWidget {
+  const _Scaffold();
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: _AppBar(
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(50),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20,
+            ),
+            child: BlocBuilder<AnalysisBloc, AnalysisState>(
+              builder: (context, state) {
+                return Row(
+                  children: state.timePeriodsInMin.map((e) {
+                    return Expanded(
+                      child: ChoiceChip(
+                        label: Text(_formatMin(e)),
+                        selected: state.timePeriod == e,
+                      ),
+                    );
+                  }).toList(),
+                );
+              },
+            ),
+          ),
+        ),
+      ),
+      body: const SafeArea(
+        child: _Body(),
+      ),
+    );
+  }
+
+  String _formatMin(int m) => '$m min';
+}
+
+class _AppBar extends StatelessWidget implements PreferredSizeWidget {
+  _AppBar({
+    this.bottom,
+  }) : preferredSize =
+            _PreferredAppBarSize(kToolbarHeight, bottom?.preferredSize.height);
+
+  final PreferredSizeWidget? bottom;
+
+  @override
+  final Size preferredSize;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: true,
       title: const Text('Analysis'),
+      bottom: bottom,
     );
   }
+}
+
+class _PreferredAppBarSize extends Size {
+  const _PreferredAppBarSize(this.toolbarHeight, this.bottomHeight)
+      : super.fromHeight(
+          (toolbarHeight ?? kToolbarHeight) + (bottomHeight ?? 0),
+        );
+
+  final double? toolbarHeight;
+  final double? bottomHeight;
 }
 
 class _Body extends StatelessWidget {
