@@ -25,6 +25,7 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
     on<_DoAnalysisEvent>(_doAnalysis);
     on<_SetTimePeriodEvent>(_setTimePeriod);
     on<_SwitchShowPercentEvent>(_switchShowPercent);
+    on<_ClearEvent>(_clear);
   }
 
   final SpeedTimeService _speedTimeService;
@@ -55,6 +56,7 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
       add(const AnalysisEvent.doAnalysis());
     } catch (e) {
       emit(state.copyWith(error: 'Error'));
+      emit(state.copyWith());
     } finally {
       emit(state.copyWith(isLoading: false));
     }
@@ -95,6 +97,13 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
     Emitter<AnalysisState> emit,
   ) {
     emit(state.copyWith(showPercent: !state.showPercent));
+  }
+
+  void _clear(
+    _ClearEvent event,
+    Emitter<AnalysisState> emit,
+  ) {
+    emit(const AnalysisState());
   }
 }
 

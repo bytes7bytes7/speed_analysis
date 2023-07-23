@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:csv/csv.dart';
 import 'package:file_picker/file_picker.dart';
@@ -21,11 +22,15 @@ class FileDataSource {
       return null;
     }
 
-    final list = await result.files.first.readStream
-        ?.transform(utf8.decoder)
-        .transform(const CsvToListConverter())
-        .toList();
+    final bytes = File(result.files.first.path!).readAsBytesSync();
+    var string = utf8.decode(bytes);
+    if (int.tryParse(string.substring(0, 1)) == null) {
+      string = string.substring(string.indexOf('\n') + 1);
+    }
 
-    return list?.map(SpeedTimeDTO.fromList).toList();
+    final csv =
+        const CsvToListConverter().convert(string.replaceAll('\n', '\r\n'));
+
+    return csv.map(SpeedTimeDTO.fromList).toList();
   }
 }

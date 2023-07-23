@@ -3,6 +3,7 @@ import 'package:injectable/injectable.dart';
 import '../../domain/repositories/analysis_repository.dart';
 import '../../domain/value_objects/analysis_result/analysis_result.dart';
 
+@prod
 @dev
 @LazySingleton(as: AnalysisRepository)
 class DevAnalysisRepository implements AnalysisRepository {

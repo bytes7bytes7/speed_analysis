@@ -10,4 +10,6 @@ class AnalysisEvent with _$AnalysisEvent {
       _SetTimePeriodEvent;
 
   const factory AnalysisEvent.switchShowPercent() = _SwitchShowPercentEvent;
+
+  const factory AnalysisEvent.clear() = _ClearEvent;
 }

@@ -80,6 +80,12 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
     return BlocBuilder<AnalysisBloc, AnalysisState>(
       builder: (context, state) {
         return AppBar(
+          leading: state.hasResult
+              ? IconButton(
+                  icon: const Icon(Icons.arrow_back),
+                  onPressed: () => bloc.add(const AnalysisEvent.clear()),
+                )
+              : null,
           centerTitle: true,
           title: const Text('Analysis'),
           actions: [
@@ -188,6 +194,12 @@ class _DataBody extends StatelessWidget {
           );
         }
 
+        var averageSpeed = <double>[];
+        if (result.averageSpeed.isNotEmpty) {
+          // just because library draws each bar for each value, not for value range
+          averageSpeed = [...result.averageSpeed, result.averageSpeed.last];
+        }
+
         return Center(
           child: SfCartesianChart(
             primaryXAxis: NumericAxis(
@@ -205,8 +217,7 @@ class _DataBody extends StatelessWidget {
             ),
             series: [
               StepAreaSeries(
-                // just because library draws each bar for each value, not for value range
-                dataSource: [...result.averageSpeed, result.averageSpeed.last],
+                dataSource: averageSpeed,
                 xValueMapper: (e, i) => i * period,
                 yValueMapper: (e, i) => e,
               ),
