@@ -1,6 +1,6 @@
 import 'package:collection/collection.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:speed_analysis/features/features.dart';
+import 'package:speed_analysis/features/analysis/domain/domain.dart';
 import 'package:test/test.dart';
 
 const _decimalAmount = 12;
