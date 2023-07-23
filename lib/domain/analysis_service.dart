@@ -50,7 +50,8 @@ class AnalysisService {
         final aV = currS / currT;
         averageSpeed.add(aV);
 
-        currS = v0 * nextT + a * nextT * nextT / 2;
+        final nextV0 = v0 + a * thisT;
+        currS = nextV0 * nextT + a * nextT * nextT / 2;
         currT = nextT;
       } else {
         final s = v0 * dt + a * dt * dt / 2;
