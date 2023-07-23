@@ -14,19 +14,19 @@ class SpeedTimeDTO {
   factory SpeedTimeDTO.fromList(List<Object?> list) {
     final tempX = list[1];
     double? x;
-    if (tempX is double) {
-      x = tempX;
+    if (tempX is num) {
+      x = tempX.toDouble();
     }
 
     final tempY = list[2];
     double? y;
-    if (tempY is double) {
-      y = tempY;
+    if (tempY is num) {
+      y = tempY.toDouble();
     }
 
     return SpeedTimeDTO(
-      speed: list[3] as double,
-      time: list[0] as double,
+      speed: (list[3] as num).toDouble(),
+      time: (list[0] as num).toDouble(),
       x: x,
       y: y,
     );

@@ -28,8 +28,8 @@ class FileDataSource {
       string = string.substring(string.indexOf('\n') + 1);
     }
 
-    final csv =
-        const CsvToListConverter().convert(string.replaceAll('\n', '\r\n'));
+    final csv = const CsvToListConverter()
+        .convert(string.replaceAll('\r\n', '\n').replaceAll('\n', '\r\n'));
 
     return csv.map(SpeedTimeDTO.fromList).toList();
   }
