@@ -18,8 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$SpeedTime {
   double get speed => throw _privateConstructorUsedError;
   double get time => throw _privateConstructorUsedError;
-  double get x => throw _privateConstructorUsedError;
-  double get y => throw _privateConstructorUsedError;
+  double? get x => throw _privateConstructorUsedError;
+  double? get y => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SpeedTimeCopyWith<SpeedTime> get copyWith =>
@@ -31,7 +31,7 @@ abstract class $SpeedTimeCopyWith<$Res> {
   factory $SpeedTimeCopyWith(SpeedTime value, $Res Function(SpeedTime) then) =
       _$SpeedTimeCopyWithImpl<$Res, SpeedTime>;
   @useResult
-  $Res call({double speed, double time, double x, double y});
+  $Res call({double speed, double time, double? x, double? y});
 }
 
 /// @nodoc
@@ -49,8 +49,8 @@ class _$SpeedTimeCopyWithImpl<$Res, $Val extends SpeedTime>
   $Res call({
     Object? speed = null,
     Object? time = null,
-    Object? x = null,
-    Object? y = null,
+    Object? x = freezed,
+    Object? y = freezed,
   }) {
     return _then(_value.copyWith(
       speed: null == speed
@@ -61,14 +61,14 @@ class _$SpeedTimeCopyWithImpl<$Res, $Val extends SpeedTime>
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
               as double,
-      x: null == x
+      x: freezed == x
           ? _value.x
           : x // ignore: cast_nullable_to_non_nullable
-              as double,
-      y: null == y
+              as double?,
+      y: freezed == y
           ? _value.y
           : y // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
     ) as $Val);
   }
 }
@@ -80,7 +80,7 @@ abstract class _$$_SpeedTimeCopyWith<$Res> implements $SpeedTimeCopyWith<$Res> {
       __$$_SpeedTimeCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({double speed, double time, double x, double y});
+  $Res call({double speed, double time, double? x, double? y});
 }
 
 /// @nodoc
@@ -96,8 +96,8 @@ class __$$_SpeedTimeCopyWithImpl<$Res>
   $Res call({
     Object? speed = null,
     Object? time = null,
-    Object? x = null,
-    Object? y = null,
+    Object? x = freezed,
+    Object? y = freezed,
   }) {
     return _then(_$_SpeedTime(
       speed: null == speed
@@ -108,14 +108,14 @@ class __$$_SpeedTimeCopyWithImpl<$Res>
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
               as double,
-      x: null == x
+      x: freezed == x
           ? _value.x
           : x // ignore: cast_nullable_to_non_nullable
-              as double,
-      y: null == y
+              as double?,
+      y: freezed == y
           ? _value.y
           : y // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
     ));
   }
 }
@@ -134,9 +134,9 @@ class _$_SpeedTime implements _SpeedTime {
   @override
   final double time;
   @override
-  final double x;
+  final double? x;
   @override
-  final double y;
+  final double? y;
 
   @override
   String toString() {
@@ -168,17 +168,17 @@ abstract class _SpeedTime implements SpeedTime {
   const factory _SpeedTime(
       {required final double speed,
       required final double time,
-      required final double x,
-      required final double y}) = _$_SpeedTime;
+      required final double? x,
+      required final double? y}) = _$_SpeedTime;
 
   @override
   double get speed;
   @override
   double get time;
   @override
-  double get x;
+  double? get x;
   @override
-  double get y;
+  double? get y;
   @override
   @JsonKey(ignore: true)
   _$$_SpeedTimeCopyWith<_$_SpeedTime> get copyWith =>

@@ -7,7 +7,7 @@ class SpeedTime with _$SpeedTime {
   const factory SpeedTime({
     required double speed,
     required double time,
-    required double x,
-    required double y,
+    required double? x,
+    required double? y,
   }) = _SpeedTime;
 }
