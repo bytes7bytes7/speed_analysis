@@ -75,10 +75,24 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      centerTitle: true,
-      title: const Text('Analysis'),
-      bottom: bottom,
+    final bloc = context.read<AnalysisBloc>();
+
+    return BlocBuilder<AnalysisBloc, AnalysisState>(
+      builder: (context, state) {
+        return AppBar(
+          centerTitle: true,
+          title: const Text('Analysis'),
+          actions: [
+            if (state.hasResult)
+              IconButton(
+                icon: Icon(state.showPercent ? Icons.speed : Icons.percent),
+                onPressed: () =>
+                    bloc.add(const AnalysisEvent.switchShowPercent()),
+              ),
+          ],
+          bottom: bottom,
+        );
+      },
     );
   }
 }
@@ -144,6 +158,34 @@ class _DataBody extends StatelessWidget {
         final period = state.timePeriod;
         if (result == null || period == null) {
           return const SizedBox.shrink();
+        }
+
+        if (state.showPercent) {
+          return Center(
+            child: SfCartesianChart(
+              primaryXAxis: CategoryAxis(
+                title: AxisTitle(
+                  text: 'Speed (m/s)',
+                  alignment: ChartAlignment.far,
+                ),
+              ),
+              primaryYAxis: NumericAxis(
+                title: AxisTitle(
+                  text: 'Percent (%)',
+                  alignment: ChartAlignment.far,
+                ),
+              ),
+              series: [
+                ColumnSeries(
+                  dataSource: [
+                    ...result.percentOfAverageSpeed.entries,
+                  ],
+                  xValueMapper: (e, i) => e.key.toStringAsFixed(1),
+                  yValueMapper: (e, i) => e.value,
+                ),
+              ],
+            ),
+          );
         }
 
         return Center(

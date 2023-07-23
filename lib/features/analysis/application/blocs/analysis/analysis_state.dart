@@ -9,6 +9,7 @@ class AnalysisState with _$AnalysisState {
     AnalysisResult? result,
     int? timePeriod,
     @Default([]) List<int> timePeriodsInMin,
+    @Default(false) bool showPercent,
   }) = _AnalysisState;
 
   const AnalysisState._();

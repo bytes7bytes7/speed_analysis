@@ -12,7 +12,7 @@ class AnalysisResult with _$AnalysisResult {
   const AnalysisResult._();
 
   Map<double, double> get percentOfAverageSpeed {
-    final singlePercentPart = averageSpeed.length / 100;
+    final singlePercentPart = 100 / averageSpeed.length;
 
     // {speed: percent}
     final result = <double, double>{};

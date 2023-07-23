@@ -21,6 +21,7 @@ mixin _$AnalysisEvent {
     required TResult Function() getDataFromFile,
     required TResult Function() doAnalysis,
     required TResult Function(int period) setTimePeriod,
+    required TResult Function() switchShowPercent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$AnalysisEvent {
     TResult? Function()? getDataFromFile,
     TResult? Function()? doAnalysis,
     TResult? Function(int period)? setTimePeriod,
+    TResult? Function()? switchShowPercent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$AnalysisEvent {
     TResult Function()? getDataFromFile,
     TResult Function()? doAnalysis,
     TResult Function(int period)? setTimePeriod,
+    TResult Function()? switchShowPercent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +46,7 @@ mixin _$AnalysisEvent {
     required TResult Function(_PickFileEvent value) getDataFromFile,
     required TResult Function(_DoAnalysisEvent value) doAnalysis,
     required TResult Function(_SetTimePeriodEvent value) setTimePeriod,
+    required TResult Function(_SwitchShowPercentEvent value) switchShowPercent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,7 @@ mixin _$AnalysisEvent {
     TResult? Function(_PickFileEvent value)? getDataFromFile,
     TResult? Function(_DoAnalysisEvent value)? doAnalysis,
     TResult? Function(_SetTimePeriodEvent value)? setTimePeriod,
+    TResult? Function(_SwitchShowPercentEvent value)? switchShowPercent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +62,7 @@ mixin _$AnalysisEvent {
     TResult Function(_PickFileEvent value)? getDataFromFile,
     TResult Function(_DoAnalysisEvent value)? doAnalysis,
     TResult Function(_SetTimePeriodEvent value)? setTimePeriod,
+    TResult Function(_SwitchShowPercentEvent value)? switchShowPercent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -121,6 +127,7 @@ class _$_PickFileEvent implements _PickFileEvent {
     required TResult Function() getDataFromFile,
     required TResult Function() doAnalysis,
     required TResult Function(int period) setTimePeriod,
+    required TResult Function() switchShowPercent,
   }) {
     return getDataFromFile();
   }
@@ -131,6 +138,7 @@ class _$_PickFileEvent implements _PickFileEvent {
     TResult? Function()? getDataFromFile,
     TResult? Function()? doAnalysis,
     TResult? Function(int period)? setTimePeriod,
+    TResult? Function()? switchShowPercent,
   }) {
     return getDataFromFile?.call();
   }
@@ -141,6 +149,7 @@ class _$_PickFileEvent implements _PickFileEvent {
     TResult Function()? getDataFromFile,
     TResult Function()? doAnalysis,
     TResult Function(int period)? setTimePeriod,
+    TResult Function()? switchShowPercent,
     required TResult orElse(),
   }) {
     if (getDataFromFile != null) {
@@ -155,6 +164,7 @@ class _$_PickFileEvent implements _PickFileEvent {
     required TResult Function(_PickFileEvent value) getDataFromFile,
     required TResult Function(_DoAnalysisEvent value) doAnalysis,
     required TResult Function(_SetTimePeriodEvent value) setTimePeriod,
+    required TResult Function(_SwitchShowPercentEvent value) switchShowPercent,
   }) {
     return getDataFromFile(this);
   }
@@ -165,6 +175,7 @@ class _$_PickFileEvent implements _PickFileEvent {
     TResult? Function(_PickFileEvent value)? getDataFromFile,
     TResult? Function(_DoAnalysisEvent value)? doAnalysis,
     TResult? Function(_SetTimePeriodEvent value)? setTimePeriod,
+    TResult? Function(_SwitchShowPercentEvent value)? switchShowPercent,
   }) {
     return getDataFromFile?.call(this);
   }
@@ -175,6 +186,7 @@ class _$_PickFileEvent implements _PickFileEvent {
     TResult Function(_PickFileEvent value)? getDataFromFile,
     TResult Function(_DoAnalysisEvent value)? doAnalysis,
     TResult Function(_SetTimePeriodEvent value)? setTimePeriod,
+    TResult Function(_SwitchShowPercentEvent value)? switchShowPercent,
     required TResult orElse(),
   }) {
     if (getDataFromFile != null) {
@@ -229,6 +241,7 @@ class _$_DoAnalysisEvent implements _DoAnalysisEvent {
     required TResult Function() getDataFromFile,
     required TResult Function() doAnalysis,
     required TResult Function(int period) setTimePeriod,
+    required TResult Function() switchShowPercent,
   }) {
     return doAnalysis();
   }
@@ -239,6 +252,7 @@ class _$_DoAnalysisEvent implements _DoAnalysisEvent {
     TResult? Function()? getDataFromFile,
     TResult? Function()? doAnalysis,
     TResult? Function(int period)? setTimePeriod,
+    TResult? Function()? switchShowPercent,
   }) {
     return doAnalysis?.call();
   }
@@ -249,6 +263,7 @@ class _$_DoAnalysisEvent implements _DoAnalysisEvent {
     TResult Function()? getDataFromFile,
     TResult Function()? doAnalysis,
     TResult Function(int period)? setTimePeriod,
+    TResult Function()? switchShowPercent,
     required TResult orElse(),
   }) {
     if (doAnalysis != null) {
@@ -263,6 +278,7 @@ class _$_DoAnalysisEvent implements _DoAnalysisEvent {
     required TResult Function(_PickFileEvent value) getDataFromFile,
     required TResult Function(_DoAnalysisEvent value) doAnalysis,
     required TResult Function(_SetTimePeriodEvent value) setTimePeriod,
+    required TResult Function(_SwitchShowPercentEvent value) switchShowPercent,
   }) {
     return doAnalysis(this);
   }
@@ -273,6 +289,7 @@ class _$_DoAnalysisEvent implements _DoAnalysisEvent {
     TResult? Function(_PickFileEvent value)? getDataFromFile,
     TResult? Function(_DoAnalysisEvent value)? doAnalysis,
     TResult? Function(_SetTimePeriodEvent value)? setTimePeriod,
+    TResult? Function(_SwitchShowPercentEvent value)? switchShowPercent,
   }) {
     return doAnalysis?.call(this);
   }
@@ -283,6 +300,7 @@ class _$_DoAnalysisEvent implements _DoAnalysisEvent {
     TResult Function(_PickFileEvent value)? getDataFromFile,
     TResult Function(_DoAnalysisEvent value)? doAnalysis,
     TResult Function(_SetTimePeriodEvent value)? setTimePeriod,
+    TResult Function(_SwitchShowPercentEvent value)? switchShowPercent,
     required TResult orElse(),
   }) {
     if (doAnalysis != null) {
@@ -364,6 +382,7 @@ class _$_SetTimePeriodEvent implements _SetTimePeriodEvent {
     required TResult Function() getDataFromFile,
     required TResult Function() doAnalysis,
     required TResult Function(int period) setTimePeriod,
+    required TResult Function() switchShowPercent,
   }) {
     return setTimePeriod(period);
   }
@@ -374,6 +393,7 @@ class _$_SetTimePeriodEvent implements _SetTimePeriodEvent {
     TResult? Function()? getDataFromFile,
     TResult? Function()? doAnalysis,
     TResult? Function(int period)? setTimePeriod,
+    TResult? Function()? switchShowPercent,
   }) {
     return setTimePeriod?.call(period);
   }
@@ -384,6 +404,7 @@ class _$_SetTimePeriodEvent implements _SetTimePeriodEvent {
     TResult Function()? getDataFromFile,
     TResult Function()? doAnalysis,
     TResult Function(int period)? setTimePeriod,
+    TResult Function()? switchShowPercent,
     required TResult orElse(),
   }) {
     if (setTimePeriod != null) {
@@ -398,6 +419,7 @@ class _$_SetTimePeriodEvent implements _SetTimePeriodEvent {
     required TResult Function(_PickFileEvent value) getDataFromFile,
     required TResult Function(_DoAnalysisEvent value) doAnalysis,
     required TResult Function(_SetTimePeriodEvent value) setTimePeriod,
+    required TResult Function(_SwitchShowPercentEvent value) switchShowPercent,
   }) {
     return setTimePeriod(this);
   }
@@ -408,6 +430,7 @@ class _$_SetTimePeriodEvent implements _SetTimePeriodEvent {
     TResult? Function(_PickFileEvent value)? getDataFromFile,
     TResult? Function(_DoAnalysisEvent value)? doAnalysis,
     TResult? Function(_SetTimePeriodEvent value)? setTimePeriod,
+    TResult? Function(_SwitchShowPercentEvent value)? switchShowPercent,
   }) {
     return setTimePeriod?.call(this);
   }
@@ -418,6 +441,7 @@ class _$_SetTimePeriodEvent implements _SetTimePeriodEvent {
     TResult Function(_PickFileEvent value)? getDataFromFile,
     TResult Function(_DoAnalysisEvent value)? doAnalysis,
     TResult Function(_SetTimePeriodEvent value)? setTimePeriod,
+    TResult Function(_SwitchShowPercentEvent value)? switchShowPercent,
     required TResult orElse(),
   }) {
     if (setTimePeriod != null) {
@@ -438,6 +462,121 @@ abstract class _SetTimePeriodEvent implements AnalysisEvent {
 }
 
 /// @nodoc
+abstract class _$$_SwitchShowPercentEventCopyWith<$Res> {
+  factory _$$_SwitchShowPercentEventCopyWith(_$_SwitchShowPercentEvent value,
+          $Res Function(_$_SwitchShowPercentEvent) then) =
+      __$$_SwitchShowPercentEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_SwitchShowPercentEventCopyWithImpl<$Res>
+    extends _$AnalysisEventCopyWithImpl<$Res, _$_SwitchShowPercentEvent>
+    implements _$$_SwitchShowPercentEventCopyWith<$Res> {
+  __$$_SwitchShowPercentEventCopyWithImpl(_$_SwitchShowPercentEvent _value,
+      $Res Function(_$_SwitchShowPercentEvent) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_SwitchShowPercentEvent implements _SwitchShowPercentEvent {
+  const _$_SwitchShowPercentEvent();
+
+  @override
+  String toString() {
+    return 'AnalysisEvent.switchShowPercent()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_SwitchShowPercentEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getDataFromFile,
+    required TResult Function() doAnalysis,
+    required TResult Function(int period) setTimePeriod,
+    required TResult Function() switchShowPercent,
+  }) {
+    return switchShowPercent();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getDataFromFile,
+    TResult? Function()? doAnalysis,
+    TResult? Function(int period)? setTimePeriod,
+    TResult? Function()? switchShowPercent,
+  }) {
+    return switchShowPercent?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getDataFromFile,
+    TResult Function()? doAnalysis,
+    TResult Function(int period)? setTimePeriod,
+    TResult Function()? switchShowPercent,
+    required TResult orElse(),
+  }) {
+    if (switchShowPercent != null) {
+      return switchShowPercent();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PickFileEvent value) getDataFromFile,
+    required TResult Function(_DoAnalysisEvent value) doAnalysis,
+    required TResult Function(_SetTimePeriodEvent value) setTimePeriod,
+    required TResult Function(_SwitchShowPercentEvent value) switchShowPercent,
+  }) {
+    return switchShowPercent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PickFileEvent value)? getDataFromFile,
+    TResult? Function(_DoAnalysisEvent value)? doAnalysis,
+    TResult? Function(_SetTimePeriodEvent value)? setTimePeriod,
+    TResult? Function(_SwitchShowPercentEvent value)? switchShowPercent,
+  }) {
+    return switchShowPercent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PickFileEvent value)? getDataFromFile,
+    TResult Function(_DoAnalysisEvent value)? doAnalysis,
+    TResult Function(_SetTimePeriodEvent value)? setTimePeriod,
+    TResult Function(_SwitchShowPercentEvent value)? switchShowPercent,
+    required TResult orElse(),
+  }) {
+    if (switchShowPercent != null) {
+      return switchShowPercent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SwitchShowPercentEvent implements AnalysisEvent {
+  const factory _SwitchShowPercentEvent() = _$_SwitchShowPercentEvent;
+}
+
+/// @nodoc
 mixin _$AnalysisState {
   bool get isLoading => throw _privateConstructorUsedError;
   String get error => throw _privateConstructorUsedError;
@@ -445,6 +584,7 @@ mixin _$AnalysisState {
   AnalysisResult? get result => throw _privateConstructorUsedError;
   int? get timePeriod => throw _privateConstructorUsedError;
   List<int> get timePeriodsInMin => throw _privateConstructorUsedError;
+  bool get showPercent => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AnalysisStateCopyWith<AnalysisState> get copyWith =>
@@ -463,7 +603,8 @@ abstract class $AnalysisStateCopyWith<$Res> {
       List<SpeedTime> data,
       AnalysisResult? result,
       int? timePeriod,
-      List<int> timePeriodsInMin});
+      List<int> timePeriodsInMin,
+      bool showPercent});
 
   $AnalysisResultCopyWith<$Res>? get result;
 }
@@ -487,6 +628,7 @@ class _$AnalysisStateCopyWithImpl<$Res, $Val extends AnalysisState>
     Object? result = freezed,
     Object? timePeriod = freezed,
     Object? timePeriodsInMin = null,
+    Object? showPercent = null,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
@@ -513,6 +655,10 @@ class _$AnalysisStateCopyWithImpl<$Res, $Val extends AnalysisState>
           ? _value.timePeriodsInMin
           : timePeriodsInMin // ignore: cast_nullable_to_non_nullable
               as List<int>,
+      showPercent: null == showPercent
+          ? _value.showPercent
+          : showPercent // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -543,7 +689,8 @@ abstract class _$$_AnalysisStateCopyWith<$Res>
       List<SpeedTime> data,
       AnalysisResult? result,
       int? timePeriod,
-      List<int> timePeriodsInMin});
+      List<int> timePeriodsInMin,
+      bool showPercent});
 
   @override
   $AnalysisResultCopyWith<$Res>? get result;
@@ -566,6 +713,7 @@ class __$$_AnalysisStateCopyWithImpl<$Res>
     Object? result = freezed,
     Object? timePeriod = freezed,
     Object? timePeriodsInMin = null,
+    Object? showPercent = null,
   }) {
     return _then(_$_AnalysisState(
       isLoading: null == isLoading
@@ -592,6 +740,10 @@ class __$$_AnalysisStateCopyWithImpl<$Res>
           ? _value._timePeriodsInMin
           : timePeriodsInMin // ignore: cast_nullable_to_non_nullable
               as List<int>,
+      showPercent: null == showPercent
+          ? _value.showPercent
+          : showPercent // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -605,7 +757,8 @@ class _$_AnalysisState extends _AnalysisState {
       final List<SpeedTime> data = const [],
       this.result,
       this.timePeriod,
-      final List<int> timePeriodsInMin = const []})
+      final List<int> timePeriodsInMin = const [],
+      this.showPercent = false})
       : _data = data,
         _timePeriodsInMin = timePeriodsInMin,
         super._();
@@ -640,8 +793,12 @@ class _$_AnalysisState extends _AnalysisState {
   }
 
   @override
+  @JsonKey()
+  final bool showPercent;
+
+  @override
   String toString() {
-    return 'AnalysisState(isLoading: $isLoading, error: $error, data: $data, result: $result, timePeriod: $timePeriod, timePeriodsInMin: $timePeriodsInMin)';
+    return 'AnalysisState(isLoading: $isLoading, error: $error, data: $data, result: $result, timePeriod: $timePeriod, timePeriodsInMin: $timePeriodsInMin, showPercent: $showPercent)';
   }
 
   @override
@@ -657,7 +814,9 @@ class _$_AnalysisState extends _AnalysisState {
             (identical(other.timePeriod, timePeriod) ||
                 other.timePeriod == timePeriod) &&
             const DeepCollectionEquality()
-                .equals(other._timePeriodsInMin, _timePeriodsInMin));
+                .equals(other._timePeriodsInMin, _timePeriodsInMin) &&
+            (identical(other.showPercent, showPercent) ||
+                other.showPercent == showPercent));
   }
 
   @override
@@ -668,7 +827,8 @@ class _$_AnalysisState extends _AnalysisState {
       const DeepCollectionEquality().hash(_data),
       result,
       timePeriod,
-      const DeepCollectionEquality().hash(_timePeriodsInMin));
+      const DeepCollectionEquality().hash(_timePeriodsInMin),
+      showPercent);
 
   @JsonKey(ignore: true)
   @override
@@ -684,7 +844,8 @@ abstract class _AnalysisState extends AnalysisState {
       final List<SpeedTime> data,
       final AnalysisResult? result,
       final int? timePeriod,
-      final List<int> timePeriodsInMin}) = _$_AnalysisState;
+      final List<int> timePeriodsInMin,
+      final bool showPercent}) = _$_AnalysisState;
   const _AnalysisState._() : super._();
 
   @override
@@ -699,6 +860,8 @@ abstract class _AnalysisState extends AnalysisState {
   int? get timePeriod;
   @override
   List<int> get timePeriodsInMin;
+  @override
+  bool get showPercent;
   @override
   @JsonKey(ignore: true)
   _$$_AnalysisStateCopyWith<_$_AnalysisState> get copyWith =>
