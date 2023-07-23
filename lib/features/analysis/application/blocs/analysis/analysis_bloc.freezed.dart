@@ -169,7 +169,7 @@ mixin _$AnalysisState {
   bool get isLoading => throw _privateConstructorUsedError;
   String get error => throw _privateConstructorUsedError;
   AnalysisResult? get result => throw _privateConstructorUsedError;
-  String? get timePeriod => throw _privateConstructorUsedError;
+  double? get timePeriod => throw _privateConstructorUsedError;
   List<String> get timePeriods => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -187,7 +187,7 @@ abstract class $AnalysisStateCopyWith<$Res> {
       {bool isLoading,
       String error,
       AnalysisResult? result,
-      String? timePeriod,
+      double? timePeriod,
       List<String> timePeriods});
 
   $AnalysisResultCopyWith<$Res>? get result;
@@ -228,7 +228,7 @@ class _$AnalysisStateCopyWithImpl<$Res, $Val extends AnalysisState>
       timePeriod: freezed == timePeriod
           ? _value.timePeriod
           : timePeriod // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as double?,
       timePeriods: null == timePeriods
           ? _value.timePeriods
           : timePeriods // ignore: cast_nullable_to_non_nullable
@@ -261,7 +261,7 @@ abstract class _$$_AnalysisStateCopyWith<$Res>
       {bool isLoading,
       String error,
       AnalysisResult? result,
-      String? timePeriod,
+      double? timePeriod,
       List<String> timePeriods});
 
   @override
@@ -301,7 +301,7 @@ class __$$_AnalysisStateCopyWithImpl<$Res>
       timePeriod: freezed == timePeriod
           ? _value.timePeriod
           : timePeriod // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as double?,
       timePeriods: null == timePeriods
           ? _value._timePeriods
           : timePeriods // ignore: cast_nullable_to_non_nullable
@@ -331,7 +331,7 @@ class _$_AnalysisState extends _AnalysisState {
   @override
   final AnalysisResult? result;
   @override
-  final String? timePeriod;
+  final double? timePeriod;
   final List<String> _timePeriods;
   @override
   @JsonKey()
@@ -377,7 +377,7 @@ abstract class _AnalysisState extends AnalysisState {
       {final bool isLoading,
       final String error,
       final AnalysisResult? result,
-      final String? timePeriod,
+      final double? timePeriod,
       final List<String> timePeriods}) = _$_AnalysisState;
   const _AnalysisState._() : super._();
 
@@ -388,7 +388,7 @@ abstract class _AnalysisState extends AnalysisState {
   @override
   AnalysisResult? get result;
   @override
-  String? get timePeriod;
+  double? get timePeriod;
   @override
   List<String> get timePeriods;
   @override

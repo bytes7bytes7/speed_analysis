@@ -86,22 +86,31 @@ class _DataBody extends StatelessWidget {
         }
 
         final result = state.result;
-        if (result == null) {
+        final period = state.timePeriod;
+        if (result == null || period == null) {
           return const SizedBox.shrink();
         }
 
         return Center(
           child: SfCartesianChart(
-            zoomPanBehavior: ZoomPanBehavior(
-              enablePinching: true,
-            ),
             primaryXAxis: NumericAxis(
-              interval: result.timePeriod.toDouble(),
+              interval: period,
+              title: AxisTitle(
+                text: 'Time (min)',
+                alignment: ChartAlignment.far,
+              ),
+            ),
+            primaryYAxis: NumericAxis(
+              title: AxisTitle(
+                text: 'Speed (m/s)',
+                alignment: ChartAlignment.far,
+              ),
             ),
             series: [
-              ColumnSeries(
-                dataSource: result.averageSpeed,
-                xValueMapper: (e, i) => i,
+              StepAreaSeries(
+                // just because library draws each bar for each value, not for value range
+                dataSource: [...result.averageSpeed, result.averageSpeed.last],
+                xValueMapper: (e, i) => i * period,
                 yValueMapper: (e, i) => e,
               ),
             ],

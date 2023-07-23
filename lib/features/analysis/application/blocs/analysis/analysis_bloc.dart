@@ -10,7 +10,6 @@ part 'analysis_state.dart';
 
 part 'analysis_bloc.freezed.dart';
 
-const _minuteSuffix = 'm';
 const _timePeriods = [
   5 * 60,
   5 * 10,
@@ -47,6 +46,7 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
       emit(
         state.copyWith(
           result: result,
+          timePeriod: result.timePeriod / 60,
         ),
       );
     } catch (e) {
@@ -55,14 +55,4 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
       emit(state.copyWith(isLoading: false));
     }
   }
-}
-
-int _parseTimePeriod(String formattedString) {
-  final number = formattedString.replaceFirst(_minuteSuffix, '');
-
-  return int.parse(number);
-}
-
-String _formatTimePeriod(int seconds) {
-  return '$seconds$_minuteSuffix';
 }

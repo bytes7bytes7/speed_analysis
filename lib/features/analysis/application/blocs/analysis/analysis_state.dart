@@ -6,7 +6,7 @@ class AnalysisState with _$AnalysisState {
     @Default(false) bool isLoading,
     @Default('') String error,
     AnalysisResult? result,
-    String? timePeriod,
+    double? timePeriod,
     @Default([]) List<String> timePeriods,
   }) = _AnalysisState;
 
