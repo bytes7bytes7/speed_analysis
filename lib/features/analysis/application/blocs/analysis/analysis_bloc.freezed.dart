@@ -18,33 +18,45 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AnalysisEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() pickFile,
+    required TResult Function() getDataFromFile,
+    required TResult Function() doAnalysis,
+    required TResult Function(int period) setTimePeriod,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? pickFile,
+    TResult? Function()? getDataFromFile,
+    TResult? Function()? doAnalysis,
+    TResult? Function(int period)? setTimePeriod,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? pickFile,
+    TResult Function()? getDataFromFile,
+    TResult Function()? doAnalysis,
+    TResult Function(int period)? setTimePeriod,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PickFileEvent value) pickFile,
+    required TResult Function(_PickFileEvent value) getDataFromFile,
+    required TResult Function(_DoAnalysisEvent value) doAnalysis,
+    required TResult Function(_SetTimePeriodEvent value) setTimePeriod,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_PickFileEvent value)? pickFile,
+    TResult? Function(_PickFileEvent value)? getDataFromFile,
+    TResult? Function(_DoAnalysisEvent value)? doAnalysis,
+    TResult? Function(_SetTimePeriodEvent value)? setTimePeriod,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PickFileEvent value)? pickFile,
+    TResult Function(_PickFileEvent value)? getDataFromFile,
+    TResult Function(_DoAnalysisEvent value)? doAnalysis,
+    TResult Function(_SetTimePeriodEvent value)? setTimePeriod,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -91,7 +103,7 @@ class _$_PickFileEvent implements _PickFileEvent {
 
   @override
   String toString() {
-    return 'AnalysisEvent.pickFile()';
+    return 'AnalysisEvent.getDataFromFile()';
   }
 
   @override
@@ -106,27 +118,33 @@ class _$_PickFileEvent implements _PickFileEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() pickFile,
+    required TResult Function() getDataFromFile,
+    required TResult Function() doAnalysis,
+    required TResult Function(int period) setTimePeriod,
   }) {
-    return pickFile();
+    return getDataFromFile();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? pickFile,
+    TResult? Function()? getDataFromFile,
+    TResult? Function()? doAnalysis,
+    TResult? Function(int period)? setTimePeriod,
   }) {
-    return pickFile?.call();
+    return getDataFromFile?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? pickFile,
+    TResult Function()? getDataFromFile,
+    TResult Function()? doAnalysis,
+    TResult Function(int period)? setTimePeriod,
     required TResult orElse(),
   }) {
-    if (pickFile != null) {
-      return pickFile();
+    if (getDataFromFile != null) {
+      return getDataFromFile();
     }
     return orElse();
   }
@@ -134,27 +152,33 @@ class _$_PickFileEvent implements _PickFileEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_PickFileEvent value) pickFile,
+    required TResult Function(_PickFileEvent value) getDataFromFile,
+    required TResult Function(_DoAnalysisEvent value) doAnalysis,
+    required TResult Function(_SetTimePeriodEvent value) setTimePeriod,
   }) {
-    return pickFile(this);
+    return getDataFromFile(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_PickFileEvent value)? pickFile,
+    TResult? Function(_PickFileEvent value)? getDataFromFile,
+    TResult? Function(_DoAnalysisEvent value)? doAnalysis,
+    TResult? Function(_SetTimePeriodEvent value)? setTimePeriod,
   }) {
-    return pickFile?.call(this);
+    return getDataFromFile?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PickFileEvent value)? pickFile,
+    TResult Function(_PickFileEvent value)? getDataFromFile,
+    TResult Function(_DoAnalysisEvent value)? doAnalysis,
+    TResult Function(_SetTimePeriodEvent value)? setTimePeriod,
     required TResult orElse(),
   }) {
-    if (pickFile != null) {
-      return pickFile(this);
+    if (getDataFromFile != null) {
+      return getDataFromFile(this);
     }
     return orElse();
   }
@@ -165,11 +189,261 @@ abstract class _PickFileEvent implements AnalysisEvent {
 }
 
 /// @nodoc
+abstract class _$$_DoAnalysisEventCopyWith<$Res> {
+  factory _$$_DoAnalysisEventCopyWith(
+          _$_DoAnalysisEvent value, $Res Function(_$_DoAnalysisEvent) then) =
+      __$$_DoAnalysisEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_DoAnalysisEventCopyWithImpl<$Res>
+    extends _$AnalysisEventCopyWithImpl<$Res, _$_DoAnalysisEvent>
+    implements _$$_DoAnalysisEventCopyWith<$Res> {
+  __$$_DoAnalysisEventCopyWithImpl(
+      _$_DoAnalysisEvent _value, $Res Function(_$_DoAnalysisEvent) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_DoAnalysisEvent implements _DoAnalysisEvent {
+  const _$_DoAnalysisEvent();
+
+  @override
+  String toString() {
+    return 'AnalysisEvent.doAnalysis()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_DoAnalysisEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getDataFromFile,
+    required TResult Function() doAnalysis,
+    required TResult Function(int period) setTimePeriod,
+  }) {
+    return doAnalysis();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getDataFromFile,
+    TResult? Function()? doAnalysis,
+    TResult? Function(int period)? setTimePeriod,
+  }) {
+    return doAnalysis?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getDataFromFile,
+    TResult Function()? doAnalysis,
+    TResult Function(int period)? setTimePeriod,
+    required TResult orElse(),
+  }) {
+    if (doAnalysis != null) {
+      return doAnalysis();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PickFileEvent value) getDataFromFile,
+    required TResult Function(_DoAnalysisEvent value) doAnalysis,
+    required TResult Function(_SetTimePeriodEvent value) setTimePeriod,
+  }) {
+    return doAnalysis(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PickFileEvent value)? getDataFromFile,
+    TResult? Function(_DoAnalysisEvent value)? doAnalysis,
+    TResult? Function(_SetTimePeriodEvent value)? setTimePeriod,
+  }) {
+    return doAnalysis?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PickFileEvent value)? getDataFromFile,
+    TResult Function(_DoAnalysisEvent value)? doAnalysis,
+    TResult Function(_SetTimePeriodEvent value)? setTimePeriod,
+    required TResult orElse(),
+  }) {
+    if (doAnalysis != null) {
+      return doAnalysis(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DoAnalysisEvent implements AnalysisEvent {
+  const factory _DoAnalysisEvent() = _$_DoAnalysisEvent;
+}
+
+/// @nodoc
+abstract class _$$_SetTimePeriodEventCopyWith<$Res> {
+  factory _$$_SetTimePeriodEventCopyWith(_$_SetTimePeriodEvent value,
+          $Res Function(_$_SetTimePeriodEvent) then) =
+      __$$_SetTimePeriodEventCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int period});
+}
+
+/// @nodoc
+class __$$_SetTimePeriodEventCopyWithImpl<$Res>
+    extends _$AnalysisEventCopyWithImpl<$Res, _$_SetTimePeriodEvent>
+    implements _$$_SetTimePeriodEventCopyWith<$Res> {
+  __$$_SetTimePeriodEventCopyWithImpl(
+      _$_SetTimePeriodEvent _value, $Res Function(_$_SetTimePeriodEvent) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? period = null,
+  }) {
+    return _then(_$_SetTimePeriodEvent(
+      period: null == period
+          ? _value.period
+          : period // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SetTimePeriodEvent implements _SetTimePeriodEvent {
+  const _$_SetTimePeriodEvent({required this.period});
+
+  @override
+  final int period;
+
+  @override
+  String toString() {
+    return 'AnalysisEvent.setTimePeriod(period: $period)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_SetTimePeriodEvent &&
+            (identical(other.period, period) || other.period == period));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, period);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_SetTimePeriodEventCopyWith<_$_SetTimePeriodEvent> get copyWith =>
+      __$$_SetTimePeriodEventCopyWithImpl<_$_SetTimePeriodEvent>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getDataFromFile,
+    required TResult Function() doAnalysis,
+    required TResult Function(int period) setTimePeriod,
+  }) {
+    return setTimePeriod(period);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getDataFromFile,
+    TResult? Function()? doAnalysis,
+    TResult? Function(int period)? setTimePeriod,
+  }) {
+    return setTimePeriod?.call(period);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getDataFromFile,
+    TResult Function()? doAnalysis,
+    TResult Function(int period)? setTimePeriod,
+    required TResult orElse(),
+  }) {
+    if (setTimePeriod != null) {
+      return setTimePeriod(period);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PickFileEvent value) getDataFromFile,
+    required TResult Function(_DoAnalysisEvent value) doAnalysis,
+    required TResult Function(_SetTimePeriodEvent value) setTimePeriod,
+  }) {
+    return setTimePeriod(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PickFileEvent value)? getDataFromFile,
+    TResult? Function(_DoAnalysisEvent value)? doAnalysis,
+    TResult? Function(_SetTimePeriodEvent value)? setTimePeriod,
+  }) {
+    return setTimePeriod?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PickFileEvent value)? getDataFromFile,
+    TResult Function(_DoAnalysisEvent value)? doAnalysis,
+    TResult Function(_SetTimePeriodEvent value)? setTimePeriod,
+    required TResult orElse(),
+  }) {
+    if (setTimePeriod != null) {
+      return setTimePeriod(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SetTimePeriodEvent implements AnalysisEvent {
+  const factory _SetTimePeriodEvent({required final int period}) =
+      _$_SetTimePeriodEvent;
+
+  int get period;
+  @JsonKey(ignore: true)
+  _$$_SetTimePeriodEventCopyWith<_$_SetTimePeriodEvent> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$AnalysisState {
   bool get isLoading => throw _privateConstructorUsedError;
   String get error => throw _privateConstructorUsedError;
+  List<SpeedTime> get data => throw _privateConstructorUsedError;
   AnalysisResult? get result => throw _privateConstructorUsedError;
-  double? get timePeriod => throw _privateConstructorUsedError;
+  int? get timePeriod => throw _privateConstructorUsedError;
   List<int> get timePeriodsInMin => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -186,8 +460,9 @@ abstract class $AnalysisStateCopyWith<$Res> {
   $Res call(
       {bool isLoading,
       String error,
+      List<SpeedTime> data,
       AnalysisResult? result,
-      double? timePeriod,
+      int? timePeriod,
       List<int> timePeriodsInMin});
 
   $AnalysisResultCopyWith<$Res>? get result;
@@ -208,6 +483,7 @@ class _$AnalysisStateCopyWithImpl<$Res, $Val extends AnalysisState>
   $Res call({
     Object? isLoading = null,
     Object? error = null,
+    Object? data = null,
     Object? result = freezed,
     Object? timePeriod = freezed,
     Object? timePeriodsInMin = null,
@@ -221,6 +497,10 @@ class _$AnalysisStateCopyWithImpl<$Res, $Val extends AnalysisState>
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String,
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<SpeedTime>,
       result: freezed == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
@@ -228,7 +508,7 @@ class _$AnalysisStateCopyWithImpl<$Res, $Val extends AnalysisState>
       timePeriod: freezed == timePeriod
           ? _value.timePeriod
           : timePeriod // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as int?,
       timePeriodsInMin: null == timePeriodsInMin
           ? _value.timePeriodsInMin
           : timePeriodsInMin // ignore: cast_nullable_to_non_nullable
@@ -260,8 +540,9 @@ abstract class _$$_AnalysisStateCopyWith<$Res>
   $Res call(
       {bool isLoading,
       String error,
+      List<SpeedTime> data,
       AnalysisResult? result,
-      double? timePeriod,
+      int? timePeriod,
       List<int> timePeriodsInMin});
 
   @override
@@ -281,6 +562,7 @@ class __$$_AnalysisStateCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = null,
     Object? error = null,
+    Object? data = null,
     Object? result = freezed,
     Object? timePeriod = freezed,
     Object? timePeriodsInMin = null,
@@ -294,6 +576,10 @@ class __$$_AnalysisStateCopyWithImpl<$Res>
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String,
+      data: null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<SpeedTime>,
       result: freezed == result
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
@@ -301,7 +587,7 @@ class __$$_AnalysisStateCopyWithImpl<$Res>
       timePeriod: freezed == timePeriod
           ? _value.timePeriod
           : timePeriod // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as int?,
       timePeriodsInMin: null == timePeriodsInMin
           ? _value._timePeriodsInMin
           : timePeriodsInMin // ignore: cast_nullable_to_non_nullable
@@ -316,10 +602,12 @@ class _$_AnalysisState extends _AnalysisState {
   const _$_AnalysisState(
       {this.isLoading = false,
       this.error = '',
+      final List<SpeedTime> data = const [],
       this.result,
       this.timePeriod,
       final List<int> timePeriodsInMin = const []})
-      : _timePeriodsInMin = timePeriodsInMin,
+      : _data = data,
+        _timePeriodsInMin = timePeriodsInMin,
         super._();
 
   @override
@@ -328,10 +616,19 @@ class _$_AnalysisState extends _AnalysisState {
   @override
   @JsonKey()
   final String error;
+  final List<SpeedTime> _data;
+  @override
+  @JsonKey()
+  List<SpeedTime> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
+
   @override
   final AnalysisResult? result;
   @override
-  final double? timePeriod;
+  final int? timePeriod;
   final List<int> _timePeriodsInMin;
   @override
   @JsonKey()
@@ -344,7 +641,7 @@ class _$_AnalysisState extends _AnalysisState {
 
   @override
   String toString() {
-    return 'AnalysisState(isLoading: $isLoading, error: $error, result: $result, timePeriod: $timePeriod, timePeriodsInMin: $timePeriodsInMin)';
+    return 'AnalysisState(isLoading: $isLoading, error: $error, data: $data, result: $result, timePeriod: $timePeriod, timePeriodsInMin: $timePeriodsInMin)';
   }
 
   @override
@@ -355,6 +652,7 @@ class _$_AnalysisState extends _AnalysisState {
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.error, error) || other.error == error) &&
+            const DeepCollectionEquality().equals(other._data, _data) &&
             (identical(other.result, result) || other.result == result) &&
             (identical(other.timePeriod, timePeriod) ||
                 other.timePeriod == timePeriod) &&
@@ -363,8 +661,14 @@ class _$_AnalysisState extends _AnalysisState {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoading, error, result,
-      timePeriod, const DeepCollectionEquality().hash(_timePeriodsInMin));
+  int get hashCode => Object.hash(
+      runtimeType,
+      isLoading,
+      error,
+      const DeepCollectionEquality().hash(_data),
+      result,
+      timePeriod,
+      const DeepCollectionEquality().hash(_timePeriodsInMin));
 
   @JsonKey(ignore: true)
   @override
@@ -377,8 +681,9 @@ abstract class _AnalysisState extends AnalysisState {
   const factory _AnalysisState(
       {final bool isLoading,
       final String error,
+      final List<SpeedTime> data,
       final AnalysisResult? result,
-      final double? timePeriod,
+      final int? timePeriod,
       final List<int> timePeriodsInMin}) = _$_AnalysisState;
   const _AnalysisState._() : super._();
 
@@ -387,9 +692,11 @@ abstract class _AnalysisState extends AnalysisState {
   @override
   String get error;
   @override
+  List<SpeedTime> get data;
+  @override
   AnalysisResult? get result;
   @override
-  double? get timePeriod;
+  int? get timePeriod;
   @override
   List<int> get timePeriodsInMin;
   @override

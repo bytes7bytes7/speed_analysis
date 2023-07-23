@@ -23,6 +23,8 @@ class _Scaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bloc = context.read<AnalysisBloc>();
+
     return Scaffold(
       appBar: _AppBar(
         bottom: PreferredSize(
@@ -39,6 +41,9 @@ class _Scaffold extends StatelessWidget {
                       child: ChoiceChip(
                         label: Text(_formatMin(e)),
                         selected: state.timePeriod == e,
+                        onSelected: (v) {
+                          bloc.add(AnalysisEvent.setTimePeriod(period: e));
+                        },
                       ),
                     );
                   }).toList(),
@@ -129,7 +134,7 @@ class _DataBody extends StatelessWidget {
         if (!state.hasResult) {
           return Center(
             child: ElevatedButton(
-              onPressed: () => bloc.add(const AnalysisEvent.pickFile()),
+              onPressed: () => bloc.add(const AnalysisEvent.getDataFromFile()),
               child: const Text('Upload file'),
             ),
           );
@@ -144,7 +149,7 @@ class _DataBody extends StatelessWidget {
         return Center(
           child: SfCartesianChart(
             primaryXAxis: NumericAxis(
-              interval: period,
+              interval: period.toDouble(),
               title: AxisTitle(
                 text: 'Time (min)',
                 alignment: ChartAlignment.far,

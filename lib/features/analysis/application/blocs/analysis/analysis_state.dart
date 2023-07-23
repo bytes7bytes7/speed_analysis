@@ -5,8 +5,9 @@ class AnalysisState with _$AnalysisState {
   const factory AnalysisState({
     @Default(false) bool isLoading,
     @Default('') String error,
+    @Default([]) List<SpeedTime> data,
     AnalysisResult? result,
-    double? timePeriod,
+    int? timePeriod,
     @Default([]) List<int> timePeriodsInMin,
   }) = _AnalysisState;
 

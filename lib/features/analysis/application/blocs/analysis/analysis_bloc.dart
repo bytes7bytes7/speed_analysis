@@ -22,6 +22,8 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
     this._analysisService,
   ) : super(const AnalysisState()) {
     on<_PickFileEvent>(_pickFile);
+    on<_DoAnalysisEvent>(_doAnalysis);
+    on<_SetTimePeriodEvent>(_setTimePeriod);
   }
 
   final SpeedTimeService _speedTimeService;
@@ -39,25 +41,53 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
         return;
       }
 
-      final timePeriod = _minutesToSeconds(_timePeriodsInMin.first);
-      final result =
-          _analysisService.getAverageSpeedForPeriod(dataOrNull, timePeriod);
+      final timePeriod = _timePeriodsInMin.first;
 
       emit(
         state.copyWith(
-          result: result,
-          timePeriod: _secondsToMinutes(result.timePeriod),
+          data: dataOrNull,
+          timePeriod: state.timePeriod ?? timePeriod,
           timePeriodsInMin: _timePeriodsInMin,
         ),
       );
+
+      add(const AnalysisEvent.doAnalysis());
     } catch (e) {
       emit(state.copyWith(error: 'Error'));
     } finally {
       emit(state.copyWith(isLoading: false));
     }
   }
-}
 
-double _secondsToMinutes(num s) => s / 60;
+  void _doAnalysis(
+    _DoAnalysisEvent event,
+    Emitter<AnalysisState> emit,
+  ) {
+    final timePeriod = state.timePeriod;
+    if (timePeriod == null) {
+      return;
+    }
+
+    final result = _analysisService.getAverageSpeedForPeriod(
+      state.data,
+      _minutesToSeconds(timePeriod),
+    );
+
+    emit(
+      state.copyWith(
+        result: result,
+      ),
+    );
+  }
+
+  void _setTimePeriod(
+    _SetTimePeriodEvent event,
+    Emitter<AnalysisState> emit,
+  ) {
+    emit(state.copyWith(timePeriod: event.period));
+
+    add(const AnalysisEvent.doAnalysis());
+  }
+}
 
 int _minutesToSeconds(int m) => m * 60;
