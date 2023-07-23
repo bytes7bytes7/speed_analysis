@@ -4,7 +4,7 @@ part of 'analysis_bloc.dart';
 class AnalysisState with _$AnalysisState {
   const factory AnalysisState({
     @Default(false) bool isLoading,
-    @Default('') String error,
+    @Default('') String info,
     @Default([]) List<SpeedTime> data,
     AnalysisResult? result,
     int? timePeriod,

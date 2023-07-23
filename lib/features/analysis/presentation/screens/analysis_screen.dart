@@ -95,6 +95,11 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
                 onPressed: () =>
                     bloc.add(const AnalysisEvent.switchShowPercent()),
               ),
+            if (state.hasResult)
+              IconButton(
+                icon: const Icon(Icons.picture_as_pdf_outlined),
+                onPressed: () => bloc.add(const AnalysisEvent.export()),
+              ),
           ],
           bottom: bottom,
         );
@@ -122,11 +127,11 @@ class _Body extends StatelessWidget {
 
     return BlocConsumer<AnalysisBloc, AnalysisState>(
       listener: (context, state) {
-        if (state.error.isNotEmpty) {
+        if (state.info.isNotEmpty) {
           scaffoldMsg
             ..clearSnackBars()
             ..showSnackBar(
-              SnackBar(content: Text(state.error)),
+              SnackBar(content: Text(state.info)),
             );
         }
       },

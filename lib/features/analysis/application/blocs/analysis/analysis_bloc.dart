@@ -26,6 +26,7 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
     on<_SetTimePeriodEvent>(_setTimePeriod);
     on<_SwitchShowPercentEvent>(_switchShowPercent);
     on<_ClearEvent>(_clear);
+    on<_ExportEvent>(_export);
   }
 
   final SpeedTimeService _speedTimeService;
@@ -55,8 +56,8 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
 
       add(const AnalysisEvent.doAnalysis());
     } catch (e) {
-      emit(state.copyWith(error: 'Error'));
-      emit(state.copyWith());
+      emit(state.copyWith(info: 'Error'));
+      emit(state.copyWith(info: ''));
     } finally {
       emit(state.copyWith(isLoading: false));
     }
@@ -104,6 +105,30 @@ class AnalysisBloc extends Bloc<AnalysisEvent, AnalysisState> {
     Emitter<AnalysisState> emit,
   ) {
     emit(const AnalysisState());
+  }
+
+  Future<void> _export(
+    _ExportEvent event,
+    Emitter<AnalysisState> emit,
+  ) async {
+    final result = state.result;
+    if (result == null) {
+      return;
+    }
+
+    emit(state.copyWith(isLoading: true));
+
+    try {
+      final fileName = await _analysisService.saveResult(result);
+
+      emit(state.copyWith(info: 'Exported to file: $fileName'));
+      emit(state.copyWith(info: ''));
+    } catch (e) {
+      emit(state.copyWith(info: 'An error occurs during exporting'));
+      emit(state.copyWith(info: ''));
+    } finally {
+      emit(state.copyWith(isLoading: false));
+    }
   }
 }
 

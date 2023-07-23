@@ -12,4 +12,6 @@ class AnalysisEvent with _$AnalysisEvent {
   const factory AnalysisEvent.switchShowPercent() = _SwitchShowPercentEvent;
 
   const factory AnalysisEvent.clear() = _ClearEvent;
+
+  const factory AnalysisEvent.export() = _ExportEvent;
 }

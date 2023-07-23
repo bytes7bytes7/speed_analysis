@@ -23,6 +23,7 @@ mixin _$AnalysisEvent {
     required TResult Function(int period) setTimePeriod,
     required TResult Function() switchShowPercent,
     required TResult Function() clear,
+    required TResult Function() export,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +33,7 @@ mixin _$AnalysisEvent {
     TResult? Function(int period)? setTimePeriod,
     TResult? Function()? switchShowPercent,
     TResult? Function()? clear,
+    TResult? Function()? export,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +43,7 @@ mixin _$AnalysisEvent {
     TResult Function(int period)? setTimePeriod,
     TResult Function()? switchShowPercent,
     TResult Function()? clear,
+    TResult Function()? export,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +54,7 @@ mixin _$AnalysisEvent {
     required TResult Function(_SetTimePeriodEvent value) setTimePeriod,
     required TResult Function(_SwitchShowPercentEvent value) switchShowPercent,
     required TResult Function(_ClearEvent value) clear,
+    required TResult Function(_ExportEvent value) export,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +64,7 @@ mixin _$AnalysisEvent {
     TResult? Function(_SetTimePeriodEvent value)? setTimePeriod,
     TResult? Function(_SwitchShowPercentEvent value)? switchShowPercent,
     TResult? Function(_ClearEvent value)? clear,
+    TResult? Function(_ExportEvent value)? export,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +74,7 @@ mixin _$AnalysisEvent {
     TResult Function(_SetTimePeriodEvent value)? setTimePeriod,
     TResult Function(_SwitchShowPercentEvent value)? switchShowPercent,
     TResult Function(_ClearEvent value)? clear,
+    TResult Function(_ExportEvent value)? export,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -135,6 +141,7 @@ class _$_PickFileEvent implements _PickFileEvent {
     required TResult Function(int period) setTimePeriod,
     required TResult Function() switchShowPercent,
     required TResult Function() clear,
+    required TResult Function() export,
   }) {
     return getDataFromFile();
   }
@@ -147,6 +154,7 @@ class _$_PickFileEvent implements _PickFileEvent {
     TResult? Function(int period)? setTimePeriod,
     TResult? Function()? switchShowPercent,
     TResult? Function()? clear,
+    TResult? Function()? export,
   }) {
     return getDataFromFile?.call();
   }
@@ -159,6 +167,7 @@ class _$_PickFileEvent implements _PickFileEvent {
     TResult Function(int period)? setTimePeriod,
     TResult Function()? switchShowPercent,
     TResult Function()? clear,
+    TResult Function()? export,
     required TResult orElse(),
   }) {
     if (getDataFromFile != null) {
@@ -175,6 +184,7 @@ class _$_PickFileEvent implements _PickFileEvent {
     required TResult Function(_SetTimePeriodEvent value) setTimePeriod,
     required TResult Function(_SwitchShowPercentEvent value) switchShowPercent,
     required TResult Function(_ClearEvent value) clear,
+    required TResult Function(_ExportEvent value) export,
   }) {
     return getDataFromFile(this);
   }
@@ -187,6 +197,7 @@ class _$_PickFileEvent implements _PickFileEvent {
     TResult? Function(_SetTimePeriodEvent value)? setTimePeriod,
     TResult? Function(_SwitchShowPercentEvent value)? switchShowPercent,
     TResult? Function(_ClearEvent value)? clear,
+    TResult? Function(_ExportEvent value)? export,
   }) {
     return getDataFromFile?.call(this);
   }
@@ -199,6 +210,7 @@ class _$_PickFileEvent implements _PickFileEvent {
     TResult Function(_SetTimePeriodEvent value)? setTimePeriod,
     TResult Function(_SwitchShowPercentEvent value)? switchShowPercent,
     TResult Function(_ClearEvent value)? clear,
+    TResult Function(_ExportEvent value)? export,
     required TResult orElse(),
   }) {
     if (getDataFromFile != null) {
@@ -255,6 +267,7 @@ class _$_DoAnalysisEvent implements _DoAnalysisEvent {
     required TResult Function(int period) setTimePeriod,
     required TResult Function() switchShowPercent,
     required TResult Function() clear,
+    required TResult Function() export,
   }) {
     return doAnalysis();
   }
@@ -267,6 +280,7 @@ class _$_DoAnalysisEvent implements _DoAnalysisEvent {
     TResult? Function(int period)? setTimePeriod,
     TResult? Function()? switchShowPercent,
     TResult? Function()? clear,
+    TResult? Function()? export,
   }) {
     return doAnalysis?.call();
   }
@@ -279,6 +293,7 @@ class _$_DoAnalysisEvent implements _DoAnalysisEvent {
     TResult Function(int period)? setTimePeriod,
     TResult Function()? switchShowPercent,
     TResult Function()? clear,
+    TResult Function()? export,
     required TResult orElse(),
   }) {
     if (doAnalysis != null) {
@@ -295,6 +310,7 @@ class _$_DoAnalysisEvent implements _DoAnalysisEvent {
     required TResult Function(_SetTimePeriodEvent value) setTimePeriod,
     required TResult Function(_SwitchShowPercentEvent value) switchShowPercent,
     required TResult Function(_ClearEvent value) clear,
+    required TResult Function(_ExportEvent value) export,
   }) {
     return doAnalysis(this);
   }
@@ -307,6 +323,7 @@ class _$_DoAnalysisEvent implements _DoAnalysisEvent {
     TResult? Function(_SetTimePeriodEvent value)? setTimePeriod,
     TResult? Function(_SwitchShowPercentEvent value)? switchShowPercent,
     TResult? Function(_ClearEvent value)? clear,
+    TResult? Function(_ExportEvent value)? export,
   }) {
     return doAnalysis?.call(this);
   }
@@ -319,6 +336,7 @@ class _$_DoAnalysisEvent implements _DoAnalysisEvent {
     TResult Function(_SetTimePeriodEvent value)? setTimePeriod,
     TResult Function(_SwitchShowPercentEvent value)? switchShowPercent,
     TResult Function(_ClearEvent value)? clear,
+    TResult Function(_ExportEvent value)? export,
     required TResult orElse(),
   }) {
     if (doAnalysis != null) {
@@ -402,6 +420,7 @@ class _$_SetTimePeriodEvent implements _SetTimePeriodEvent {
     required TResult Function(int period) setTimePeriod,
     required TResult Function() switchShowPercent,
     required TResult Function() clear,
+    required TResult Function() export,
   }) {
     return setTimePeriod(period);
   }
@@ -414,6 +433,7 @@ class _$_SetTimePeriodEvent implements _SetTimePeriodEvent {
     TResult? Function(int period)? setTimePeriod,
     TResult? Function()? switchShowPercent,
     TResult? Function()? clear,
+    TResult? Function()? export,
   }) {
     return setTimePeriod?.call(period);
   }
@@ -426,6 +446,7 @@ class _$_SetTimePeriodEvent implements _SetTimePeriodEvent {
     TResult Function(int period)? setTimePeriod,
     TResult Function()? switchShowPercent,
     TResult Function()? clear,
+    TResult Function()? export,
     required TResult orElse(),
   }) {
     if (setTimePeriod != null) {
@@ -442,6 +463,7 @@ class _$_SetTimePeriodEvent implements _SetTimePeriodEvent {
     required TResult Function(_SetTimePeriodEvent value) setTimePeriod,
     required TResult Function(_SwitchShowPercentEvent value) switchShowPercent,
     required TResult Function(_ClearEvent value) clear,
+    required TResult Function(_ExportEvent value) export,
   }) {
     return setTimePeriod(this);
   }
@@ -454,6 +476,7 @@ class _$_SetTimePeriodEvent implements _SetTimePeriodEvent {
     TResult? Function(_SetTimePeriodEvent value)? setTimePeriod,
     TResult? Function(_SwitchShowPercentEvent value)? switchShowPercent,
     TResult? Function(_ClearEvent value)? clear,
+    TResult? Function(_ExportEvent value)? export,
   }) {
     return setTimePeriod?.call(this);
   }
@@ -466,6 +489,7 @@ class _$_SetTimePeriodEvent implements _SetTimePeriodEvent {
     TResult Function(_SetTimePeriodEvent value)? setTimePeriod,
     TResult Function(_SwitchShowPercentEvent value)? switchShowPercent,
     TResult Function(_ClearEvent value)? clear,
+    TResult Function(_ExportEvent value)? export,
     required TResult orElse(),
   }) {
     if (setTimePeriod != null) {
@@ -529,6 +553,7 @@ class _$_SwitchShowPercentEvent implements _SwitchShowPercentEvent {
     required TResult Function(int period) setTimePeriod,
     required TResult Function() switchShowPercent,
     required TResult Function() clear,
+    required TResult Function() export,
   }) {
     return switchShowPercent();
   }
@@ -541,6 +566,7 @@ class _$_SwitchShowPercentEvent implements _SwitchShowPercentEvent {
     TResult? Function(int period)? setTimePeriod,
     TResult? Function()? switchShowPercent,
     TResult? Function()? clear,
+    TResult? Function()? export,
   }) {
     return switchShowPercent?.call();
   }
@@ -553,6 +579,7 @@ class _$_SwitchShowPercentEvent implements _SwitchShowPercentEvent {
     TResult Function(int period)? setTimePeriod,
     TResult Function()? switchShowPercent,
     TResult Function()? clear,
+    TResult Function()? export,
     required TResult orElse(),
   }) {
     if (switchShowPercent != null) {
@@ -569,6 +596,7 @@ class _$_SwitchShowPercentEvent implements _SwitchShowPercentEvent {
     required TResult Function(_SetTimePeriodEvent value) setTimePeriod,
     required TResult Function(_SwitchShowPercentEvent value) switchShowPercent,
     required TResult Function(_ClearEvent value) clear,
+    required TResult Function(_ExportEvent value) export,
   }) {
     return switchShowPercent(this);
   }
@@ -581,6 +609,7 @@ class _$_SwitchShowPercentEvent implements _SwitchShowPercentEvent {
     TResult? Function(_SetTimePeriodEvent value)? setTimePeriod,
     TResult? Function(_SwitchShowPercentEvent value)? switchShowPercent,
     TResult? Function(_ClearEvent value)? clear,
+    TResult? Function(_ExportEvent value)? export,
   }) {
     return switchShowPercent?.call(this);
   }
@@ -593,6 +622,7 @@ class _$_SwitchShowPercentEvent implements _SwitchShowPercentEvent {
     TResult Function(_SetTimePeriodEvent value)? setTimePeriod,
     TResult Function(_SwitchShowPercentEvent value)? switchShowPercent,
     TResult Function(_ClearEvent value)? clear,
+    TResult Function(_ExportEvent value)? export,
     required TResult orElse(),
   }) {
     if (switchShowPercent != null) {
@@ -649,6 +679,7 @@ class _$_ClearEvent implements _ClearEvent {
     required TResult Function(int period) setTimePeriod,
     required TResult Function() switchShowPercent,
     required TResult Function() clear,
+    required TResult Function() export,
   }) {
     return clear();
   }
@@ -661,6 +692,7 @@ class _$_ClearEvent implements _ClearEvent {
     TResult? Function(int period)? setTimePeriod,
     TResult? Function()? switchShowPercent,
     TResult? Function()? clear,
+    TResult? Function()? export,
   }) {
     return clear?.call();
   }
@@ -673,6 +705,7 @@ class _$_ClearEvent implements _ClearEvent {
     TResult Function(int period)? setTimePeriod,
     TResult Function()? switchShowPercent,
     TResult Function()? clear,
+    TResult Function()? export,
     required TResult orElse(),
   }) {
     if (clear != null) {
@@ -689,6 +722,7 @@ class _$_ClearEvent implements _ClearEvent {
     required TResult Function(_SetTimePeriodEvent value) setTimePeriod,
     required TResult Function(_SwitchShowPercentEvent value) switchShowPercent,
     required TResult Function(_ClearEvent value) clear,
+    required TResult Function(_ExportEvent value) export,
   }) {
     return clear(this);
   }
@@ -701,6 +735,7 @@ class _$_ClearEvent implements _ClearEvent {
     TResult? Function(_SetTimePeriodEvent value)? setTimePeriod,
     TResult? Function(_SwitchShowPercentEvent value)? switchShowPercent,
     TResult? Function(_ClearEvent value)? clear,
+    TResult? Function(_ExportEvent value)? export,
   }) {
     return clear?.call(this);
   }
@@ -713,6 +748,7 @@ class _$_ClearEvent implements _ClearEvent {
     TResult Function(_SetTimePeriodEvent value)? setTimePeriod,
     TResult Function(_SwitchShowPercentEvent value)? switchShowPercent,
     TResult Function(_ClearEvent value)? clear,
+    TResult Function(_ExportEvent value)? export,
     required TResult orElse(),
   }) {
     if (clear != null) {
@@ -727,9 +763,135 @@ abstract class _ClearEvent implements AnalysisEvent {
 }
 
 /// @nodoc
+abstract class _$$_ExportEventCopyWith<$Res> {
+  factory _$$_ExportEventCopyWith(
+          _$_ExportEvent value, $Res Function(_$_ExportEvent) then) =
+      __$$_ExportEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_ExportEventCopyWithImpl<$Res>
+    extends _$AnalysisEventCopyWithImpl<$Res, _$_ExportEvent>
+    implements _$$_ExportEventCopyWith<$Res> {
+  __$$_ExportEventCopyWithImpl(
+      _$_ExportEvent _value, $Res Function(_$_ExportEvent) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_ExportEvent implements _ExportEvent {
+  const _$_ExportEvent();
+
+  @override
+  String toString() {
+    return 'AnalysisEvent.export()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_ExportEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getDataFromFile,
+    required TResult Function() doAnalysis,
+    required TResult Function(int period) setTimePeriod,
+    required TResult Function() switchShowPercent,
+    required TResult Function() clear,
+    required TResult Function() export,
+  }) {
+    return export();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getDataFromFile,
+    TResult? Function()? doAnalysis,
+    TResult? Function(int period)? setTimePeriod,
+    TResult? Function()? switchShowPercent,
+    TResult? Function()? clear,
+    TResult? Function()? export,
+  }) {
+    return export?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getDataFromFile,
+    TResult Function()? doAnalysis,
+    TResult Function(int period)? setTimePeriod,
+    TResult Function()? switchShowPercent,
+    TResult Function()? clear,
+    TResult Function()? export,
+    required TResult orElse(),
+  }) {
+    if (export != null) {
+      return export();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PickFileEvent value) getDataFromFile,
+    required TResult Function(_DoAnalysisEvent value) doAnalysis,
+    required TResult Function(_SetTimePeriodEvent value) setTimePeriod,
+    required TResult Function(_SwitchShowPercentEvent value) switchShowPercent,
+    required TResult Function(_ClearEvent value) clear,
+    required TResult Function(_ExportEvent value) export,
+  }) {
+    return export(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PickFileEvent value)? getDataFromFile,
+    TResult? Function(_DoAnalysisEvent value)? doAnalysis,
+    TResult? Function(_SetTimePeriodEvent value)? setTimePeriod,
+    TResult? Function(_SwitchShowPercentEvent value)? switchShowPercent,
+    TResult? Function(_ClearEvent value)? clear,
+    TResult? Function(_ExportEvent value)? export,
+  }) {
+    return export?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PickFileEvent value)? getDataFromFile,
+    TResult Function(_DoAnalysisEvent value)? doAnalysis,
+    TResult Function(_SetTimePeriodEvent value)? setTimePeriod,
+    TResult Function(_SwitchShowPercentEvent value)? switchShowPercent,
+    TResult Function(_ClearEvent value)? clear,
+    TResult Function(_ExportEvent value)? export,
+    required TResult orElse(),
+  }) {
+    if (export != null) {
+      return export(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ExportEvent implements AnalysisEvent {
+  const factory _ExportEvent() = _$_ExportEvent;
+}
+
+/// @nodoc
 mixin _$AnalysisState {
   bool get isLoading => throw _privateConstructorUsedError;
-  String get error => throw _privateConstructorUsedError;
+  String get info => throw _privateConstructorUsedError;
   List<SpeedTime> get data => throw _privateConstructorUsedError;
   AnalysisResult? get result => throw _privateConstructorUsedError;
   int? get timePeriod => throw _privateConstructorUsedError;
@@ -749,7 +911,7 @@ abstract class $AnalysisStateCopyWith<$Res> {
   @useResult
   $Res call(
       {bool isLoading,
-      String error,
+      String info,
       List<SpeedTime> data,
       AnalysisResult? result,
       int? timePeriod,
@@ -773,7 +935,7 @@ class _$AnalysisStateCopyWithImpl<$Res, $Val extends AnalysisState>
   @override
   $Res call({
     Object? isLoading = null,
-    Object? error = null,
+    Object? info = null,
     Object? data = null,
     Object? result = freezed,
     Object? timePeriod = freezed,
@@ -785,9 +947,9 @@ class _$AnalysisStateCopyWithImpl<$Res, $Val extends AnalysisState>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      error: null == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
+      info: null == info
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
               as String,
       data: null == data
           ? _value.data
@@ -835,7 +997,7 @@ abstract class _$$_AnalysisStateCopyWith<$Res>
   @useResult
   $Res call(
       {bool isLoading,
-      String error,
+      String info,
       List<SpeedTime> data,
       AnalysisResult? result,
       int? timePeriod,
@@ -858,7 +1020,7 @@ class __$$_AnalysisStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = null,
-    Object? error = null,
+    Object? info = null,
     Object? data = null,
     Object? result = freezed,
     Object? timePeriod = freezed,
@@ -870,9 +1032,9 @@ class __$$_AnalysisStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      error: null == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
+      info: null == info
+          ? _value.info
+          : info // ignore: cast_nullable_to_non_nullable
               as String,
       data: null == data
           ? _value._data
@@ -903,7 +1065,7 @@ class __$$_AnalysisStateCopyWithImpl<$Res>
 class _$_AnalysisState extends _AnalysisState {
   const _$_AnalysisState(
       {this.isLoading = false,
-      this.error = '',
+      this.info = '',
       final List<SpeedTime> data = const [],
       this.result,
       this.timePeriod,
@@ -918,7 +1080,7 @@ class _$_AnalysisState extends _AnalysisState {
   final bool isLoading;
   @override
   @JsonKey()
-  final String error;
+  final String info;
   final List<SpeedTime> _data;
   @override
   @JsonKey()
@@ -948,7 +1110,7 @@ class _$_AnalysisState extends _AnalysisState {
 
   @override
   String toString() {
-    return 'AnalysisState(isLoading: $isLoading, error: $error, data: $data, result: $result, timePeriod: $timePeriod, timePeriodsInMin: $timePeriodsInMin, showPercent: $showPercent)';
+    return 'AnalysisState(isLoading: $isLoading, info: $info, data: $data, result: $result, timePeriod: $timePeriod, timePeriodsInMin: $timePeriodsInMin, showPercent: $showPercent)';
   }
 
   @override
@@ -958,7 +1120,7 @@ class _$_AnalysisState extends _AnalysisState {
             other is _$_AnalysisState &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
-            (identical(other.error, error) || other.error == error) &&
+            (identical(other.info, info) || other.info == info) &&
             const DeepCollectionEquality().equals(other._data, _data) &&
             (identical(other.result, result) || other.result == result) &&
             (identical(other.timePeriod, timePeriod) ||
@@ -973,7 +1135,7 @@ class _$_AnalysisState extends _AnalysisState {
   int get hashCode => Object.hash(
       runtimeType,
       isLoading,
-      error,
+      info,
       const DeepCollectionEquality().hash(_data),
       result,
       timePeriod,
@@ -990,7 +1152,7 @@ class _$_AnalysisState extends _AnalysisState {
 abstract class _AnalysisState extends AnalysisState {
   const factory _AnalysisState(
       {final bool isLoading,
-      final String error,
+      final String info,
       final List<SpeedTime> data,
       final AnalysisResult? result,
       final int? timePeriod,
@@ -1001,7 +1163,7 @@ abstract class _AnalysisState extends AnalysisState {
   @override
   bool get isLoading;
   @override
-  String get error;
+  String get info;
   @override
   List<SpeedTime> get data;
   @override
