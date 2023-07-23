@@ -168,6 +168,9 @@ abstract class _PickFileEvent implements AnalysisEvent {
 mixin _$AnalysisState {
   bool get isLoading => throw _privateConstructorUsedError;
   String get error => throw _privateConstructorUsedError;
+  AnalysisResultVM? get result => throw _privateConstructorUsedError;
+  String? get timePeriod => throw _privateConstructorUsedError;
+  List<String> get timePeriods => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AnalysisStateCopyWith<AnalysisState> get copyWith =>
@@ -180,7 +183,14 @@ abstract class $AnalysisStateCopyWith<$Res> {
           AnalysisState value, $Res Function(AnalysisState) then) =
       _$AnalysisStateCopyWithImpl<$Res, AnalysisState>;
   @useResult
-  $Res call({bool isLoading, String error});
+  $Res call(
+      {bool isLoading,
+      String error,
+      AnalysisResultVM? result,
+      String? timePeriod,
+      List<String> timePeriods});
+
+  $AnalysisResultVMCopyWith<$Res>? get result;
 }
 
 /// @nodoc
@@ -198,6 +208,9 @@ class _$AnalysisStateCopyWithImpl<$Res, $Val extends AnalysisState>
   $Res call({
     Object? isLoading = null,
     Object? error = null,
+    Object? result = freezed,
+    Object? timePeriod = freezed,
+    Object? timePeriods = null,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
@@ -208,7 +221,31 @@ class _$AnalysisStateCopyWithImpl<$Res, $Val extends AnalysisState>
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String,
+      result: freezed == result
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as AnalysisResultVM?,
+      timePeriod: freezed == timePeriod
+          ? _value.timePeriod
+          : timePeriod // ignore: cast_nullable_to_non_nullable
+              as String?,
+      timePeriods: null == timePeriods
+          ? _value.timePeriods
+          : timePeriods // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AnalysisResultVMCopyWith<$Res>? get result {
+    if (_value.result == null) {
+      return null;
+    }
+
+    return $AnalysisResultVMCopyWith<$Res>(_value.result!, (value) {
+      return _then(_value.copyWith(result: value) as $Val);
+    });
   }
 }
 
@@ -220,7 +257,15 @@ abstract class _$$_AnalysisStateCopyWith<$Res>
       __$$_AnalysisStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isLoading, String error});
+  $Res call(
+      {bool isLoading,
+      String error,
+      AnalysisResultVM? result,
+      String? timePeriod,
+      List<String> timePeriods});
+
+  @override
+  $AnalysisResultVMCopyWith<$Res>? get result;
 }
 
 /// @nodoc
@@ -236,6 +281,9 @@ class __$$_AnalysisStateCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = null,
     Object? error = null,
+    Object? result = freezed,
+    Object? timePeriod = freezed,
+    Object? timePeriods = null,
   }) {
     return _then(_$_AnalysisState(
       isLoading: null == isLoading
@@ -246,14 +294,33 @@ class __$$_AnalysisStateCopyWithImpl<$Res>
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String,
+      result: freezed == result
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as AnalysisResultVM?,
+      timePeriod: freezed == timePeriod
+          ? _value.timePeriod
+          : timePeriod // ignore: cast_nullable_to_non_nullable
+              as String?,
+      timePeriods: null == timePeriods
+          ? _value._timePeriods
+          : timePeriods // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_AnalysisState implements _AnalysisState {
-  const _$_AnalysisState({this.isLoading = false, this.error = ''});
+class _$_AnalysisState extends _AnalysisState {
+  const _$_AnalysisState(
+      {this.isLoading = false,
+      this.error = '',
+      this.result,
+      this.timePeriod,
+      final List<String> timePeriods = const []})
+      : _timePeriods = timePeriods,
+        super._();
 
   @override
   @JsonKey()
@@ -261,10 +328,22 @@ class _$_AnalysisState implements _AnalysisState {
   @override
   @JsonKey()
   final String error;
+  @override
+  final AnalysisResultVM? result;
+  @override
+  final String? timePeriod;
+  final List<String> _timePeriods;
+  @override
+  @JsonKey()
+  List<String> get timePeriods {
+    if (_timePeriods is EqualUnmodifiableListView) return _timePeriods;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_timePeriods);
+  }
 
   @override
   String toString() {
-    return 'AnalysisState(isLoading: $isLoading, error: $error)';
+    return 'AnalysisState(isLoading: $isLoading, error: $error, result: $result, timePeriod: $timePeriod, timePeriods: $timePeriods)';
   }
 
   @override
@@ -274,11 +353,17 @@ class _$_AnalysisState implements _AnalysisState {
             other is _$_AnalysisState &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
-            (identical(other.error, error) || other.error == error));
+            (identical(other.error, error) || other.error == error) &&
+            (identical(other.result, result) || other.result == result) &&
+            (identical(other.timePeriod, timePeriod) ||
+                other.timePeriod == timePeriod) &&
+            const DeepCollectionEquality()
+                .equals(other._timePeriods, _timePeriods));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoading, error);
+  int get hashCode => Object.hash(runtimeType, isLoading, error, result,
+      timePeriod, const DeepCollectionEquality().hash(_timePeriods));
 
   @JsonKey(ignore: true)
   @override
@@ -287,14 +372,25 @@ class _$_AnalysisState implements _AnalysisState {
       __$$_AnalysisStateCopyWithImpl<_$_AnalysisState>(this, _$identity);
 }
 
-abstract class _AnalysisState implements AnalysisState {
-  const factory _AnalysisState({final bool isLoading, final String error}) =
-      _$_AnalysisState;
+abstract class _AnalysisState extends AnalysisState {
+  const factory _AnalysisState(
+      {final bool isLoading,
+      final String error,
+      final AnalysisResultVM? result,
+      final String? timePeriod,
+      final List<String> timePeriods}) = _$_AnalysisState;
+  const _AnalysisState._() : super._();
 
   @override
   bool get isLoading;
   @override
   String get error;
+  @override
+  AnalysisResultVM? get result;
+  @override
+  String? get timePeriod;
+  @override
+  List<String> get timePeriods;
   @override
   @JsonKey(ignore: true)
   _$$_AnalysisStateCopyWith<_$_AnalysisState> get copyWith =>

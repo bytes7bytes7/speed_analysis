@@ -57,11 +57,35 @@ class _Body extends StatelessWidget {
       builder: (context, state) {
         return Stack(
           children: [
-            const Center(
-              child: Text('No file uploaded'),
-            ),
+            const _DataBody(),
             if (state.isLoading) const LoadingOverlay(),
           ],
+        );
+      },
+    );
+  }
+}
+
+class _DataBody extends StatelessWidget {
+  const _DataBody();
+
+  @override
+  Widget build(BuildContext context) {
+    final bloc = context.read<AnalysisBloc>();
+
+    return BlocBuilder<AnalysisBloc, AnalysisState>(
+      builder: (context, state) {
+        if (!state.hasResult) {
+          return Center(
+            child: ElevatedButton(
+              onPressed: () => bloc.add(const AnalysisEvent.pickFile()),
+              child: const Text('Upload file'),
+            ),
+          );
+        }
+
+        return const Center(
+          child: Text('Data'),
         );
       },
     );
