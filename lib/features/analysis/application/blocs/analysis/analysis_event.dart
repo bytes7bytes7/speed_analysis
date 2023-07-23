@@ -14,5 +14,6 @@ class AnalysisEvent with _$AnalysisEvent {
   const factory AnalysisEvent.export({
     required Uint8List speedChatImage,
     required Uint8List percentCharImage,
+    required Uint8List logo,
   }) = _ExportEvent;
 }

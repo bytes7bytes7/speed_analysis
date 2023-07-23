@@ -22,8 +22,8 @@ mixin _$AnalysisEvent {
     required TResult Function() doAnalysis,
     required TResult Function(int period) setTimePeriod,
     required TResult Function() clear,
-    required TResult Function(
-            Uint8List speedChatImage, Uint8List percentCharImage)
+    required TResult Function(Uint8List speedChatImage,
+            Uint8List percentCharImage, Uint8List logo)
         export,
   }) =>
       throw _privateConstructorUsedError;
@@ -33,7 +33,8 @@ mixin _$AnalysisEvent {
     TResult? Function()? doAnalysis,
     TResult? Function(int period)? setTimePeriod,
     TResult? Function()? clear,
-    TResult? Function(Uint8List speedChatImage, Uint8List percentCharImage)?
+    TResult? Function(Uint8List speedChatImage, Uint8List percentCharImage,
+            Uint8List logo)?
         export,
   }) =>
       throw _privateConstructorUsedError;
@@ -43,7 +44,8 @@ mixin _$AnalysisEvent {
     TResult Function()? doAnalysis,
     TResult Function(int period)? setTimePeriod,
     TResult Function()? clear,
-    TResult Function(Uint8List speedChatImage, Uint8List percentCharImage)?
+    TResult Function(Uint8List speedChatImage, Uint8List percentCharImage,
+            Uint8List logo)?
         export,
     required TResult orElse(),
   }) =>
@@ -138,8 +140,8 @@ class _$_PickFileEvent implements _PickFileEvent {
     required TResult Function() doAnalysis,
     required TResult Function(int period) setTimePeriod,
     required TResult Function() clear,
-    required TResult Function(
-            Uint8List speedChatImage, Uint8List percentCharImage)
+    required TResult Function(Uint8List speedChatImage,
+            Uint8List percentCharImage, Uint8List logo)
         export,
   }) {
     return getDataFromFile();
@@ -152,7 +154,8 @@ class _$_PickFileEvent implements _PickFileEvent {
     TResult? Function()? doAnalysis,
     TResult? Function(int period)? setTimePeriod,
     TResult? Function()? clear,
-    TResult? Function(Uint8List speedChatImage, Uint8List percentCharImage)?
+    TResult? Function(Uint8List speedChatImage, Uint8List percentCharImage,
+            Uint8List logo)?
         export,
   }) {
     return getDataFromFile?.call();
@@ -165,7 +168,8 @@ class _$_PickFileEvent implements _PickFileEvent {
     TResult Function()? doAnalysis,
     TResult Function(int period)? setTimePeriod,
     TResult Function()? clear,
-    TResult Function(Uint8List speedChatImage, Uint8List percentCharImage)?
+    TResult Function(Uint8List speedChatImage, Uint8List percentCharImage,
+            Uint8List logo)?
         export,
     required TResult orElse(),
   }) {
@@ -262,8 +266,8 @@ class _$_DoAnalysisEvent implements _DoAnalysisEvent {
     required TResult Function() doAnalysis,
     required TResult Function(int period) setTimePeriod,
     required TResult Function() clear,
-    required TResult Function(
-            Uint8List speedChatImage, Uint8List percentCharImage)
+    required TResult Function(Uint8List speedChatImage,
+            Uint8List percentCharImage, Uint8List logo)
         export,
   }) {
     return doAnalysis();
@@ -276,7 +280,8 @@ class _$_DoAnalysisEvent implements _DoAnalysisEvent {
     TResult? Function()? doAnalysis,
     TResult? Function(int period)? setTimePeriod,
     TResult? Function()? clear,
-    TResult? Function(Uint8List speedChatImage, Uint8List percentCharImage)?
+    TResult? Function(Uint8List speedChatImage, Uint8List percentCharImage,
+            Uint8List logo)?
         export,
   }) {
     return doAnalysis?.call();
@@ -289,7 +294,8 @@ class _$_DoAnalysisEvent implements _DoAnalysisEvent {
     TResult Function()? doAnalysis,
     TResult Function(int period)? setTimePeriod,
     TResult Function()? clear,
-    TResult Function(Uint8List speedChatImage, Uint8List percentCharImage)?
+    TResult Function(Uint8List speedChatImage, Uint8List percentCharImage,
+            Uint8List logo)?
         export,
     required TResult orElse(),
   }) {
@@ -413,8 +419,8 @@ class _$_SetTimePeriodEvent implements _SetTimePeriodEvent {
     required TResult Function() doAnalysis,
     required TResult Function(int period) setTimePeriod,
     required TResult Function() clear,
-    required TResult Function(
-            Uint8List speedChatImage, Uint8List percentCharImage)
+    required TResult Function(Uint8List speedChatImage,
+            Uint8List percentCharImage, Uint8List logo)
         export,
   }) {
     return setTimePeriod(period);
@@ -427,7 +433,8 @@ class _$_SetTimePeriodEvent implements _SetTimePeriodEvent {
     TResult? Function()? doAnalysis,
     TResult? Function(int period)? setTimePeriod,
     TResult? Function()? clear,
-    TResult? Function(Uint8List speedChatImage, Uint8List percentCharImage)?
+    TResult? Function(Uint8List speedChatImage, Uint8List percentCharImage,
+            Uint8List logo)?
         export,
   }) {
     return setTimePeriod?.call(period);
@@ -440,7 +447,8 @@ class _$_SetTimePeriodEvent implements _SetTimePeriodEvent {
     TResult Function()? doAnalysis,
     TResult Function(int period)? setTimePeriod,
     TResult Function()? clear,
-    TResult Function(Uint8List speedChatImage, Uint8List percentCharImage)?
+    TResult Function(Uint8List speedChatImage, Uint8List percentCharImage,
+            Uint8List logo)?
         export,
     required TResult orElse(),
   }) {
@@ -543,8 +551,8 @@ class _$_ClearEvent implements _ClearEvent {
     required TResult Function() doAnalysis,
     required TResult Function(int period) setTimePeriod,
     required TResult Function() clear,
-    required TResult Function(
-            Uint8List speedChatImage, Uint8List percentCharImage)
+    required TResult Function(Uint8List speedChatImage,
+            Uint8List percentCharImage, Uint8List logo)
         export,
   }) {
     return clear();
@@ -557,7 +565,8 @@ class _$_ClearEvent implements _ClearEvent {
     TResult? Function()? doAnalysis,
     TResult? Function(int period)? setTimePeriod,
     TResult? Function()? clear,
-    TResult? Function(Uint8List speedChatImage, Uint8List percentCharImage)?
+    TResult? Function(Uint8List speedChatImage, Uint8List percentCharImage,
+            Uint8List logo)?
         export,
   }) {
     return clear?.call();
@@ -570,7 +579,8 @@ class _$_ClearEvent implements _ClearEvent {
     TResult Function()? doAnalysis,
     TResult Function(int period)? setTimePeriod,
     TResult Function()? clear,
-    TResult Function(Uint8List speedChatImage, Uint8List percentCharImage)?
+    TResult Function(Uint8List speedChatImage, Uint8List percentCharImage,
+            Uint8List logo)?
         export,
     required TResult orElse(),
   }) {
@@ -631,7 +641,8 @@ abstract class _$$_ExportEventCopyWith<$Res> {
           _$_ExportEvent value, $Res Function(_$_ExportEvent) then) =
       __$$_ExportEventCopyWithImpl<$Res>;
   @useResult
-  $Res call({Uint8List speedChatImage, Uint8List percentCharImage});
+  $Res call(
+      {Uint8List speedChatImage, Uint8List percentCharImage, Uint8List logo});
 }
 
 /// @nodoc
@@ -647,6 +658,7 @@ class __$$_ExportEventCopyWithImpl<$Res>
   $Res call({
     Object? speedChatImage = null,
     Object? percentCharImage = null,
+    Object? logo = null,
   }) {
     return _then(_$_ExportEvent(
       speedChatImage: null == speedChatImage
@@ -657,6 +669,10 @@ class __$$_ExportEventCopyWithImpl<$Res>
           ? _value.percentCharImage
           : percentCharImage // ignore: cast_nullable_to_non_nullable
               as Uint8List,
+      logo: null == logo
+          ? _value.logo
+          : logo // ignore: cast_nullable_to_non_nullable
+              as Uint8List,
     ));
   }
 }
@@ -665,16 +681,20 @@ class __$$_ExportEventCopyWithImpl<$Res>
 
 class _$_ExportEvent implements _ExportEvent {
   const _$_ExportEvent(
-      {required this.speedChatImage, required this.percentCharImage});
+      {required this.speedChatImage,
+      required this.percentCharImage,
+      required this.logo});
 
   @override
   final Uint8List speedChatImage;
   @override
   final Uint8List percentCharImage;
+  @override
+  final Uint8List logo;
 
   @override
   String toString() {
-    return 'AnalysisEvent.export(speedChatImage: $speedChatImage, percentCharImage: $percentCharImage)';
+    return 'AnalysisEvent.export(speedChatImage: $speedChatImage, percentCharImage: $percentCharImage, logo: $logo)';
   }
 
   @override
@@ -685,14 +705,16 @@ class _$_ExportEvent implements _ExportEvent {
             const DeepCollectionEquality()
                 .equals(other.speedChatImage, speedChatImage) &&
             const DeepCollectionEquality()
-                .equals(other.percentCharImage, percentCharImage));
+                .equals(other.percentCharImage, percentCharImage) &&
+            const DeepCollectionEquality().equals(other.logo, logo));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(speedChatImage),
-      const DeepCollectionEquality().hash(percentCharImage));
+      const DeepCollectionEquality().hash(percentCharImage),
+      const DeepCollectionEquality().hash(logo));
 
   @JsonKey(ignore: true)
   @override
@@ -707,11 +729,11 @@ class _$_ExportEvent implements _ExportEvent {
     required TResult Function() doAnalysis,
     required TResult Function(int period) setTimePeriod,
     required TResult Function() clear,
-    required TResult Function(
-            Uint8List speedChatImage, Uint8List percentCharImage)
+    required TResult Function(Uint8List speedChatImage,
+            Uint8List percentCharImage, Uint8List logo)
         export,
   }) {
-    return export(speedChatImage, percentCharImage);
+    return export(speedChatImage, percentCharImage, logo);
   }
 
   @override
@@ -721,10 +743,11 @@ class _$_ExportEvent implements _ExportEvent {
     TResult? Function()? doAnalysis,
     TResult? Function(int period)? setTimePeriod,
     TResult? Function()? clear,
-    TResult? Function(Uint8List speedChatImage, Uint8List percentCharImage)?
+    TResult? Function(Uint8List speedChatImage, Uint8List percentCharImage,
+            Uint8List logo)?
         export,
   }) {
-    return export?.call(speedChatImage, percentCharImage);
+    return export?.call(speedChatImage, percentCharImage, logo);
   }
 
   @override
@@ -734,12 +757,13 @@ class _$_ExportEvent implements _ExportEvent {
     TResult Function()? doAnalysis,
     TResult Function(int period)? setTimePeriod,
     TResult Function()? clear,
-    TResult Function(Uint8List speedChatImage, Uint8List percentCharImage)?
+    TResult Function(Uint8List speedChatImage, Uint8List percentCharImage,
+            Uint8List logo)?
         export,
     required TResult orElse(),
   }) {
     if (export != null) {
-      return export(speedChatImage, percentCharImage);
+      return export(speedChatImage, percentCharImage, logo);
     }
     return orElse();
   }
@@ -788,10 +812,12 @@ class _$_ExportEvent implements _ExportEvent {
 abstract class _ExportEvent implements AnalysisEvent {
   const factory _ExportEvent(
       {required final Uint8List speedChatImage,
-      required final Uint8List percentCharImage}) = _$_ExportEvent;
+      required final Uint8List percentCharImage,
+      required final Uint8List logo}) = _$_ExportEvent;
 
   Uint8List get speedChatImage;
   Uint8List get percentCharImage;
+  Uint8List get logo;
   @JsonKey(ignore: true)
   _$$_ExportEventCopyWith<_$_ExportEvent> get copyWith =>
       throw _privateConstructorUsedError;

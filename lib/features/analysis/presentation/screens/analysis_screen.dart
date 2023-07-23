@@ -1,7 +1,7 @@
-import 'dart:typed_data';
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -104,6 +104,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
                       AnalysisEvent.export(
                         speedChatImage: await _chartToImage(_speedChartKey),
                         percentCharImage: await _chartToImage(_percentChartKey),
+                        logo: logoImage,
                       ),
                     );
                   } catch (e) {
@@ -188,55 +189,68 @@ class _DataBody extends StatelessWidget {
           averageSpeed = [...result.averageSpeed, result.averageSpeed.last];
         }
 
-        return Row(
+        return Column(
           children: [
-            Expanded(
-              child: SfCartesianChart(
-                key: _speedChartKey,
-                primaryXAxis: NumericAxis(
-                  interval: period.toDouble(),
-                  title: AxisTitle(
-                    text: 'Time (min)',
-                    alignment: ChartAlignment.far,
-                  ),
-                ),
-                primaryYAxis: NumericAxis(
-                  title: AxisTitle(
-                    text: 'Speed (m/s)',
-                    alignment: ChartAlignment.far,
-                  ),
-                ),
-                series: [
-                  StepAreaSeries(
-                    dataSource: averageSpeed,
-                    xValueMapper: (e, i) => i * period,
-                    yValueMapper: (e, i) => e,
-                  ),
-                ],
-              ),
+            SizedBox.square(
+              dimension: 150,
+              child: Image.memory(logoImage),
+            ),
+            const SizedBox(
+              height: 20,
             ),
             Expanded(
-              child: SfCartesianChart(
-                key: _percentChartKey,
-                primaryXAxis: CategoryAxis(
-                  title: AxisTitle(
-                    text: 'Speed (m/s)',
-                    alignment: ChartAlignment.far,
+              child: Row(
+                children: [
+                  Expanded(
+                    child: SfCartesianChart(
+                      key: _speedChartKey,
+                      primaryXAxis: NumericAxis(
+                        interval: period.toDouble(),
+                        title: AxisTitle(
+                          text: 'Time (min)',
+                          alignment: ChartAlignment.far,
+                        ),
+                      ),
+                      primaryYAxis: NumericAxis(
+                        title: AxisTitle(
+                          text: 'Speed (m/s)',
+                          alignment: ChartAlignment.far,
+                        ),
+                      ),
+                      series: [
+                        StepAreaSeries(
+                          dataSource: averageSpeed,
+                          xValueMapper: (e, i) => i * period,
+                          yValueMapper: (e, i) => e,
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                primaryYAxis: NumericAxis(
-                  title: AxisTitle(
-                    text: 'Percent (%)',
-                    alignment: ChartAlignment.far,
-                  ),
-                ),
-                series: [
-                  ColumnSeries(
-                    dataSource: [
-                      ...result.percentOfAverageSpeed.entries,
-                    ],
-                    xValueMapper: (e, i) => e.key.toStringAsFixed(1),
-                    yValueMapper: (e, i) => e.value,
+                  Expanded(
+                    child: SfCartesianChart(
+                      key: _percentChartKey,
+                      primaryXAxis: CategoryAxis(
+                        title: AxisTitle(
+                          text: 'Speed (m/s)',
+                          alignment: ChartAlignment.far,
+                        ),
+                      ),
+                      primaryYAxis: NumericAxis(
+                        title: AxisTitle(
+                          text: 'Percent (%)',
+                          alignment: ChartAlignment.far,
+                        ),
+                      ),
+                      series: [
+                        ColumnSeries(
+                          dataSource: [
+                            ...result.percentOfAverageSpeed.entries,
+                          ],
+                          xValueMapper: (e, i) => e.key.toStringAsFixed(1),
+                          yValueMapper: (e, i) => e.value,
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
